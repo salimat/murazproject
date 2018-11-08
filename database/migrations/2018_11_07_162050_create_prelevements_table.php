@@ -14,10 +14,10 @@ class CreatePrelevementsTable extends Migration
     public function up()
     {
         Schema::create('prelevements', function (Blueprint $table) {
-            
+
              $table->string('id_prel');
              $table->unsignedInteger('matricule_emp');
-             
+
              $table->unsignedInteger('id_patient');
              
              $table->date('date_prel');
