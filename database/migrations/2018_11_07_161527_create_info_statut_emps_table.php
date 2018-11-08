@@ -14,7 +14,11 @@ class CreateInfoStatutEmpsTable extends Migration
     public function up()
     {
         Schema::create('info_statut_emps', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('matricule_emp');
+             $table->unsignedInteger('id_statut_emp');
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->primary('id_statut_emp','matricule_emp');
             $table->timestamps();
         });
     }

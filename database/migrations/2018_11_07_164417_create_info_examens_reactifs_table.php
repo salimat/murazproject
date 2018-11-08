@@ -14,8 +14,12 @@ class CreateInfoExamensReactifsTable extends Migration
     public function up()
     {
         Schema::create('info_examens_reactifs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('id_composant');
+              $table->unsignedInteger('id_reactif');
+              $table->date('date_utilisation');
+               $table->primary('id_composant','id_reactif');
             $table->timestamps();
+
         });
     }
 

@@ -14,7 +14,9 @@ class AddModifyToSectionsTable extends Migration
     public function up()
     {
         Schema::table('sections', function (Blueprint $table) {
-            //
+             // $table->unsignedInteger('id_labo');
+
+           $table->foreign('id_labo')->references('id_labo')->on('laboratoires');
         });
     }
 
@@ -26,7 +28,7 @@ class AddModifyToSectionsTable extends Migration
     public function down()
     {
         Schema::table('sections', function (Blueprint $table) {
-            //
+             $table->dropForeign('id_labo');
         });
     }
 }

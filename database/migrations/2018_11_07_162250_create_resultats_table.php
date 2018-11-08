@@ -14,7 +14,17 @@ class CreateResultatsTable extends Migration
     public function up()
     {
         Schema::create('resultats', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_resultat');
+              $table->unsignedInteger('id_examen');
+                
+                  $table->unsignedInteger('id_patient');
+                    
+                      $table->unsignedInteger('matricule_emp');
+                        $table->date('date_resultat');
+                          $table->time('heure_resultat');
+                            $table->longText('observation');
+                              $table->longText('conclusion');
+              
             $table->timestamps();
         });
     }

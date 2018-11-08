@@ -14,7 +14,12 @@ class CreateResultatSansNormesTable extends Migration
     public function up()
     {
         Schema::create('resultat_sans_normes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_rsn');
+            $table->longText('detail');
+              $table->unsignedInteger('id_resultat');
+                $table->string('valeur');
+                  
+                     
             $table->timestamps();
         });
     }

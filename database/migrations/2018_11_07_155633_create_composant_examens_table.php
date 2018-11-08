@@ -14,7 +14,18 @@ class CreateComposantExamensTable extends Migration
     public function up()
     {
         Schema::create('composant_examens', function (Blueprint $table) {
-            $table->increments('id');
+           $table->increments('id_composant');
+            
+
+            $table->string('nom_composant');
+            
+             
+            $table->unsignedInteger('id_examen');
+            $table->unsignedInteger('id_rn');
+            $table->unsignedInteger('id_rmc');
+            $table->unsignedInteger('id_rsn');
+            $table->unsignedInteger('id_rnc');
+ 
             $table->timestamps();
         });
     }

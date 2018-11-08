@@ -14,7 +14,14 @@ class AddModifyToNormesTable extends Migration
     public function up()
     {
         Schema::table('normes', function (Blueprint $table) {
-            //
+            // $table->unsignedInteger('id_unite');
+
+           $table->foreign('id_unite')->references('id_unite')->on('unite_mesures');
+
+
+           //$table->unsignedInteger('id_composant');
+
+           $table->foreign('id_composant')->references('id_composant')->on('composant_examens');
         });
     }
 
@@ -26,7 +33,8 @@ class AddModifyToNormesTable extends Migration
     public function down()
     {
         Schema::table('normes', function (Blueprint $table) {
-            //
+            $table->dropForeign(['id_unite']);
+            $table->dropForeign(['id_composant']);
         });
     }
 }

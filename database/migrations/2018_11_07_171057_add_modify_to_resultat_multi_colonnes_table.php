@@ -14,7 +14,9 @@ class AddModifyToResultatMultiColonnesTable extends Migration
     public function up()
     {
         Schema::table('resultat_multi_colonnes', function (Blueprint $table) {
-            //
+             //$table->unsignedInteger('id_resultat');
+
+           $table->foreign('id_resultat')->references('id_resultat')->on('resultats');
         });
     }
 
@@ -26,7 +28,7 @@ class AddModifyToResultatMultiColonnesTable extends Migration
     public function down()
     {
         Schema::table('resultat_multi_colonnes', function (Blueprint $table) {
-            //
+            $table->dropForeign('id_resultat');
         });
     }
 }

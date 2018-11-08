@@ -14,7 +14,13 @@ class CreateAssurancesTable extends Migration
     public function up()
     {
         Schema::create('assurances', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_assurance');
+            $table->string('nom_assurance');
+            $table->string('adresse_assurance');
+            $table->integer('tel_assurance');
+            $table->string('email_assurance');
+            $table->string('code_post_assurance');
+            $table->string('abreviation');
             $table->timestamps();
         });
     }

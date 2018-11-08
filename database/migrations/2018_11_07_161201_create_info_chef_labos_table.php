@@ -14,7 +14,11 @@ class CreateInfoChefLabosTable extends Migration
     public function up()
     {
         Schema::create('info_chef_labos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->unsignedInteger('matricule_emp');
+            $table->unsignedInteger('id_labo');
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->primary('matricule_emp','id_labo');
             $table->timestamps();
         });
     }

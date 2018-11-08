@@ -14,7 +14,14 @@ class CreateResultatNormeCalculesTable extends Migration
     public function up()
     {
         Schema::create('resultat_norme_calcules', function (Blueprint $table) {
-            $table->increments('id');
+              $table->increments('id_rnc');
+            $table->longText('detail');
+              $table->unsignedInteger('id_resultat');
+                $table->float('valeur');
+                  $table->float('taux');
+                    $table->float('valeur_calcule');
+                      $table->float('valeur_absolu');
+              
             $table->timestamps();
         });
     }

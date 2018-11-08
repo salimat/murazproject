@@ -14,7 +14,12 @@ class CreateStockReactifsTable extends Migration
     public function up()
     {
         Schema::create('stock_reactifs', function (Blueprint $table) {
-            $table->increments('id');
+           $table->increments('id_stock_reactif');
+            $table->unsignedInteger('id_reactif');
+             $table->float('valeur_initiale');
+              $table->float('valeur_restante');
+                $table->date('date_stockage');
+               
             $table->timestamps();
         });
     }

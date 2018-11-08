@@ -14,7 +14,10 @@ class CreateInfoEmployeSectionsTable extends Migration
     public function up()
     {
         Schema::create('info_employe_sections', function (Blueprint $table) {
-            $table->increments('id');
+            
+              $table->unsignedInteger('matricule_emp');
+               $table->unsignedInteger('id_section');
+                $table->primary('matricule_emp','id_section');
             $table->timestamps();
         });
     }

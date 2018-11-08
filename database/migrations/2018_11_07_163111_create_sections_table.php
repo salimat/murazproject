@@ -14,7 +14,10 @@ class CreateSectionsTable extends Migration
     public function up()
     {
         Schema::create('sections', function (Blueprint $table) {
-            $table->increments('id');
+           $table->increments('id_section');
+              $table->unsignedInteger('id_labo');
+             $table->string('nom_section');
+               
             $table->timestamps();
         });
     }

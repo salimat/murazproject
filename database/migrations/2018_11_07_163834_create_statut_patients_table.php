@@ -14,7 +14,9 @@ class CreateStatutPatientsTable extends Migration
     public function up()
     {
         Schema::create('statut_patients', function (Blueprint $table) {
-            $table->increments('id');
+             $table->increments('id_statut_patient');
+             $table->string('nom_statut_patient');
+            
             $table->timestamps();
         });
     }

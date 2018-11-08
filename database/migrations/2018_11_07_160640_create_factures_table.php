@@ -14,7 +14,15 @@ class CreateFacturesTable extends Migration
     public function up()
     {
         Schema::create('factures', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_facture');
+
+            $table->unsignedInteger('id_examen');
+            $table->unsignedInteger('id_patient');
+            $table->unsignedInteger('matricule_emp');
+
+            $table->date('date_facture');
+            $table->float('net_payer');
+            
             $table->timestamps();
         });
     }

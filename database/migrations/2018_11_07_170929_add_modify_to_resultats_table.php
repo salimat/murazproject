@@ -14,7 +14,18 @@ class AddModifyToResultatsTable extends Migration
     public function up()
     {
         Schema::table('resultats', function (Blueprint $table) {
-            //
+            // $table->unsignedInteger('id_examen');
+
+           $table->foreign('id_examen')->references('id_examen')->on('examens');
+
+
+           // $table->unsignedInteger('id_patient');
+
+           $table->foreign('id_patient')->references('id_patient')->on('patients');
+
+           // $table->unsignedInteger('matricule_emp');
+
+           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
         });
     }
 
@@ -26,7 +37,9 @@ class AddModifyToResultatsTable extends Migration
     public function down()
     {
         Schema::table('resultats', function (Blueprint $table) {
-            //
+            $table->dropForeign('id_examen');
+            $table->dropForeign('id_patient');
+            $table->dropForeign('matricule_emp');
         });
     }
 }

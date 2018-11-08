@@ -14,7 +14,14 @@ class AddModifyToPatientsTable extends Migration
     public function up()
     {
         Schema::table('patients', function (Blueprint $table) {
-            //
+           // $table->unsignedInteger('id_statut_patient');
+
+           $table->foreign('id_statut_patient')->references('id_statut_patient')->on('statut_patients');
+
+           // $table->unsignedInteger('matricule_emp');
+
+           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
+
         });
     }
 
@@ -26,7 +33,8 @@ class AddModifyToPatientsTable extends Migration
     public function down()
     {
         Schema::table('patients', function (Blueprint $table) {
-            //
+              $table->dropForeign(['id_statut_patient']);
+            $table->dropForeign(['matricule_emp']);
         });
     }
 }

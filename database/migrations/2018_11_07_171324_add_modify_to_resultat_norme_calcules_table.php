@@ -14,7 +14,9 @@ class AddModifyToResultatNormeCalculesTable extends Migration
     public function up()
     {
         Schema::table('resultat_norme_calcules', function (Blueprint $table) {
-            //
+            // $table->unsignedInteger('id_resultat');
+
+           $table->foreign('id_resultat')->references('id_resultat')->on('resultats');
         });
     }
 
@@ -26,7 +28,7 @@ class AddModifyToResultatNormeCalculesTable extends Migration
     public function down()
     {
         Schema::table('resultat_norme_calcules', function (Blueprint $table) {
-            //
+            $table->dropForeign('id_resultat');
         });
     }
 }

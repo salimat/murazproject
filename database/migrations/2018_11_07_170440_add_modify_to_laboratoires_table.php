@@ -14,7 +14,9 @@ class AddModifyToLaboratoiresTable extends Migration
     public function up()
     {
         Schema::table('laboratoires', function (Blueprint $table) {
-            //
+            //$table->unsignedInteger('id_departement');
+
+           $table->foreign('id_departement')->references('id_departement')->on('departements');
         });
     }
 
@@ -26,7 +28,7 @@ class AddModifyToLaboratoiresTable extends Migration
     public function down()
     {
         Schema::table('laboratoires', function (Blueprint $table) {
-            //
+            $table->dropForeign(['id_departement']);
         });
     }
 }
