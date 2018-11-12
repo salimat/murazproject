@@ -8,4 +8,6 @@ class Laboratoire extends Model
 {
     //
     protected $table = 'laboratoires';
+    protected $fillable ['nom_labo'] ;
+      protected $guarded =['id_labo'];
 }

@@ -8,4 +8,6 @@ class Reactif extends Model
 {
     //
     protected $table = 'reactifs';
+    protected $fillable ['nom_ractif','valeur_min','valeur_max'] ;
+    protected $guarded =['id_reactif'];
 }

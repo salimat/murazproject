@@ -8,4 +8,6 @@ class Resultat_norme extends Model
 {
     //
     protected $table = 'resultat_normes';
+    protected $fillable ['detail','valeur'] ;
+    protected $guarded =['id_rn'];
 }

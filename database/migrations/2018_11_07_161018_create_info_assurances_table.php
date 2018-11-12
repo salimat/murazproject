@@ -19,6 +19,7 @@ class CreateInfoAssurancesTable extends Migration
             $table->string('type_assurance');
             $table->float('pourcentage');
             $table->longText('detail');
+            $table->DateTime('date_validite');
             $table->primary('id_assurance','id_patient');
             $table->timestamps();
         });

@@ -8,4 +8,7 @@ class Fonction extends Model
 {
     //
     protected $table = 'fonctions';
+
+    protected $fillable ['nom_fonction'] ;
+    protected $guarded =['id_fonction'];
 }

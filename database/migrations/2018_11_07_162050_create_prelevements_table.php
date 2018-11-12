@@ -19,9 +19,10 @@ class CreatePrelevementsTable extends Migration
              $table->unsignedInteger('matricule_emp');
 
              $table->unsignedInteger('id_patient');
-             
+
              $table->date('date_prel');
              $table->time('heure_prel');
+             $table->String('echantillon');
             $table->primary(['id_prel','matricule_emp','id_patient']);
             $table->timestamps();
         });

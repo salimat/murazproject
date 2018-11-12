@@ -8,4 +8,6 @@ class Examen extends Model
 {
     //
     protected $table = 'examens';
+    protected $fillable ['nom_examen','montant_examen','abreviation'] ;
+    protected $guarded =['id_examen'];
 }
