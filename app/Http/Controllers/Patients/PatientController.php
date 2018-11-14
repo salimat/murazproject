@@ -14,7 +14,9 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        //permet d'appeller la vue lier a cet Index
+        return view('Patient/patient');
+
     }
 
     /**
@@ -35,7 +37,8 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //pour inserer dans la base de donnees
+    
     }
 
     /**

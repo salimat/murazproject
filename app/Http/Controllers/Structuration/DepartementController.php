@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Structuration;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Modeles\Structuration\Departement;
 class DepartementController extends Controller
 {
     /**
@@ -12,9 +12,12 @@ class DepartementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     //pour afficher tout afficher du modele
     public function index()
     {
-        //
+        $departements=Departement::all();
+
+        return view('Departements/index',compact('departements'));
     }
 
     /**
@@ -22,9 +25,11 @@ class DepartementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     //pour creer le formulaire qui permet d'inserer un nouveau domaine
     public function create()
     {
-        //
+        //je retourne la vue pour afficher le formulaire de creation de departements
+        return view('Departements/create');
     }
 
     /**
@@ -33,9 +38,15 @@ class DepartementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+     //pour inserer les donnees de mon formulaire dans ma base de donnes
     public function store(Request $request)
     {
         //
+
+
+        $dep = new Departement;
+        $dep->nom_departement=$request->nom_departement;
+        $dep->save();
     }
 
     /**
@@ -44,9 +55,11 @@ class DepartementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //Pour afficher un element du modele
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -55,6 +68,7 @@ class DepartementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //Pour afficher le formulaire pour la modification de la base de donnees
     public function edit($id)
     {
         //
@@ -67,6 +81,7 @@ class DepartementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //pour modifier un element de la base de donnees
     public function update(Request $request, $id)
     {
         //
@@ -78,6 +93,7 @@ class DepartementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //pour supprimer un element
     public function destroy($id)
     {
         //
