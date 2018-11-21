@@ -14,12 +14,12 @@ class CreateReactifsTable extends Migration
     public function up()
     {
         Schema::create('reactifs', function (Blueprint $table) {
-             $table->increments('id_reactif');
-            
+             $table->increments('id');
+
             $table->string('nom_reactif');
             $table->float('valeur_min');
             $table->float('valeur_max');
-            
+
 
             $table->timestamps();
         });

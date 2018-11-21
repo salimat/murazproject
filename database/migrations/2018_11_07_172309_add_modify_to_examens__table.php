@@ -16,18 +16,18 @@ class AddModifyToExamensTable extends Migration
         Schema::table('examens', function (Blueprint $table) {
              //$table->unsignedInteger('id_section');
 
-             $table->foreign('id_section')->references('id_section')->on('sections');
+             $table->foreign('sections_id')->references('id')->on('sections');
 
 
               //$table->unsignedInteger('id_mat');
 
-               $table->foreign('id_mat')->references('id_mat')->on('materiels');
+               $table->foreign('materiels_id')->references('id')->on('materiels');
 
 
 
                //$table->unsignedInteger('id_type_prelevement');
 
-               $table->foreign('id_type_prelevement')->references('id_type_prelevement')->on('type_prelevements');
+               $table->foreign('type_prelevements_id')->references('id')->on('type_prelevements');
         });
     }
 
@@ -39,12 +39,12 @@ class AddModifyToExamensTable extends Migration
     public function down()
     {
         Schema::table('examens', function (Blueprint $table) {
-             $table->dropForeign(['id_section']);
+             $table->dropForeign(['sections_id']);
 
-            $table->dropForeign(['id_mat']);
+            $table->dropForeign(['materiels_id']);
 
 
-            $table->dropForeign(['id_type_prelevement']);
+            $table->dropForeign(['type_prelevements_id']);
         });
     }
 }

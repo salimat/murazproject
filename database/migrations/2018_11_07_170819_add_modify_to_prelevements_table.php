@@ -16,12 +16,12 @@ class AddModifyToPrelevementsTable extends Migration
         Schema::table('prelevements', function (Blueprint $table) {
             //$table->unsignedInteger('matricule_emp');
 
-           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
+           $table->foreign('employes_id')->references('id')->on('employes');
 
 
           // $table->unsignedInteger('id_patient');
 
-           $table->foreign('id_patient')->references('id_patient')->on('patients');
+           $table->foreign('patients_id')->references('id')->on('patients');
 
         });
     }
@@ -34,8 +34,8 @@ class AddModifyToPrelevementsTable extends Migration
     public function down()
     {
         Schema::table('prelevements', function (Blueprint $table) {
-            $table->dropForeign('matricule_emp');
-            $table->dropForeign('id_patient');
+            $table->dropForeign('employes_id');
+            $table->dropForeign('patients_id');
         });
     }
 }

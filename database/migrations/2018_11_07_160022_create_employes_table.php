@@ -14,22 +14,22 @@ class CreateEmployesTable extends Migration
     public function up()
     {
         Schema::create('employes', function (Blueprint $table) {
-            $table->increments('matricule_emp');
-            
-            $table->string('nom_per');
+            $table->increments('id');
+
+            $table->string('name');
             $table->string('prenom_per');
             $table->date('date_naissance');
             $table->string('sexe_per');
             $table->integer('contact_per');
             $table->string('adresse_per');
-            $table->string('mail_per');
-
-            $table->unsignedInteger('id_fonction');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->unsignedInteger('fonctions_id')->nullable();;
 
             $table->date('date_emb');
-            $table->string('login_emp');
-            $table->string('mot_de_passe');
-            
+            $table->string('password');
+
             $table->timestamps();
         });
     }

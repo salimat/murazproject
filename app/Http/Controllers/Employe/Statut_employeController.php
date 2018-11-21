@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Employe;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Employes\Statut_employe;
 
 class Statut_employeController extends Controller
 {
@@ -15,6 +16,10 @@ class Statut_employeController extends Controller
     public function index()
     {
         //
+
+        $statut=Statut_employe::all();
+
+        return view('Statut_employes.index',compact('statut'));
     }
 
     /**
@@ -25,6 +30,7 @@ class Statut_employeController extends Controller
     public function create()
     {
         //
+        return view('Statut_employes.create');
     }
 
     /**
@@ -36,6 +42,11 @@ class Statut_employeController extends Controller
     public function store(Request $request)
     {
         //
+
+        $statuts = new Statut_employe;
+        $statuts->nom_statut_emp=$request->nom_statut_emp;
+        $statuts->save();
+        echo 'Le statut  '.$statuts->nom_statut_emp. ' a ete ajoute avec succes';
     }
 
     /**

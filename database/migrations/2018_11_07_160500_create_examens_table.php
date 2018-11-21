@@ -14,18 +14,18 @@ class CreateExamensTable extends Migration
     public function up()
     {
         Schema::create('examens', function (Blueprint $table) {
-           $table->increments('id_examen');
+           $table->increments('id');
 
-            $table->unsignedInteger('id_section');
-            $table->unsignedInteger('id_mat');
-            $table->unsignedInteger('id_type_prelevement');
-            
+            $table->unsignedInteger('sections_id')->nullable();
+            $table->unsignedInteger('materiels_id')->nullable();
+            $table->unsignedInteger('type_prelevements_id')->nullable();
+
 
 
             $table->string('nom_examen');
             $table->float('montant_examen');
             $table->string('abreviation');
-            
+
             $table->timestamps();
         });
     }

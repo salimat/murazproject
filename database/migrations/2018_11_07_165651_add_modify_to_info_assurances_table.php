@@ -16,11 +16,11 @@ class AddModifyToInfoAssurancesTable extends Migration
         Schema::table('info_assurances', function (Blueprint $table) {
            //  $table->unsignedInteger('id_patient');
 
-           $table->foreign('id_patient')->references('id_patient')->on('patients');
+           $table->foreign('patients_id')->references('id')->on('patients');
 
            // $table->unsignedInteger('id_assurance');
 
-           $table->foreign('id_assurance')->references('id_assurance')->on('assurances');
+           $table->foreign('assurances_id')->references('id')->on('assurances');
         });
     }
 
@@ -32,8 +32,8 @@ class AddModifyToInfoAssurancesTable extends Migration
     public function down()
     {
         Schema::table('info_assurances', function (Blueprint $table) {
-            $table->dropForeign(['id_patient']);
-            $table->dropForeign(['id_assurance']);
+            $table->dropForeign(['patients_id']);
+            $table->dropForeign(['assurances_id']);
         });
     }
 }

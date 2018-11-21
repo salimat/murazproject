@@ -16,7 +16,7 @@ class AddModifyToEtatReactifsTable extends Migration
         Schema::table('etat_reactifs', function (Blueprint $table) {
              //$table->unsignedInteger('id_reactif');
 
-              $table->foreign('id_reactif')->references('id_reactif')->on('reactifs');
+              $table->foreign('reactifs_id')->references('id')->on('reactifs');
         });
     }
 
@@ -28,8 +28,8 @@ class AddModifyToEtatReactifsTable extends Migration
     public function down()
     {
         Schema::table('etat_reactifs', function (Blueprint $table) {
-            
-             $table->dropForeign(['id_reactif']);
+
+             $table->dropForeign(['reactifs_id']);
         });
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Employe;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Modeles\Employes\Fonction;
 class FonctionController extends Controller
 {
     /**
@@ -15,6 +15,9 @@ class FonctionController extends Controller
     public function index()
     {
         //
+        $fonctions=Fonction::all();
+
+        return view('Fonctions/index',compact('fonctions'));
     }
 
     /**
@@ -25,6 +28,7 @@ class FonctionController extends Controller
     public function create()
     {
         //
+        return view('Fonctions/create');
     }
 
     /**
@@ -36,6 +40,11 @@ class FonctionController extends Controller
     public function store(Request $request)
     {
         //
+        $fonctions = new Fonction;
+        $fonctions->nom_fonction=$request->nom_fonction;
+        $fonctions->save();
+        echo 'La fonction '.$fonctions->nom_fonction. ' a ete ajoute avec succes';
+        //return redirect()->route('fonctions.index')->withMessage('La fonction "'.$fonctions->nom_fonction.'" a bien été ajouté');
     }
 
     /**

@@ -16,17 +16,17 @@ class AddModifyToFacturesTable extends Migration
         Schema::table('factures', function (Blueprint $table) {
              //$table->unsignedInteger('id_examen');
 
-           $table->foreign('id_examen')->references('id_examen')->on('examens');
+           $table->foreign('examens_id')->references('id')->on('examens');
 
 
            //$table->unsignedInteger('id_patient');
 
-           $table->foreign('id_patient')->references('id_patient')->on('patients');
+           $table->foreign('patients_id')->references('id')->on('patients');
 
 
            //$table->unsignedInteger('matricule_emp');
 
-           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
+           $table->foreign('employes_id')->references('id')->on('employes');
         });
     }
 
@@ -38,9 +38,9 @@ class AddModifyToFacturesTable extends Migration
     public function down()
     {
         Schema::table('factures', function (Blueprint $table) {
-             $table->dropForeign(['id_examen']);
-            $table->dropForeign(['id_patient']);
-            $table->dropForeign(['matricule_emp']);
+             $table->dropForeign(['examens_id']);
+            $table->dropForeign(['patients_id']);
+            $table->dropForeign(['employes_id']);
         });
     }
 }

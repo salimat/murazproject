@@ -47,6 +47,7 @@ class DepartementController extends Controller
         $dep = new Departement;
         $dep->nom_departement=$request->nom_departement;
         $dep->save();
+        return redirect()->route('departements.index')->withMessage('Le departement "'.$dep->nom_departement.'" a bien été ajouté');
     }
 
     /**
@@ -59,6 +60,7 @@ class DepartementController extends Controller
     public function show($id)
     {
         //
+        return view('Departements.show',['departement' => Departement::findOrFail($id)]);
 
     }
 
@@ -72,6 +74,14 @@ class DepartementController extends Controller
     public function edit($id)
     {
         //
+
+    /*   $departements = Departement::where::findOrFail($id);
+        return view('Departements.edit',compact('departements'));*/
+        $departements = Departement::where('id', $id)->firstOrFail();
+        return view('Departements/edit', compact('departements'));
+
+        //view('Departements.edit');
+
     }
 
     /**
@@ -82,10 +92,12 @@ class DepartementController extends Controller
      * @return \Illuminate\Http\Response
      */
      //pour modifier un element de la base de donnees
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
+      public function update($id, Request $request){
+   $departements = Departement::where('id', $id)->firstOrFail(); /* trouve l'entrée en DB */
+   $departements->update($request->intersect(['nom_departement'])); /*récupère les valeurs suivantes */
+   return redirect()->back(); /* redirige vers la vue d'édition */
+  }
 
     /**
      * Remove the specified resource from storage.

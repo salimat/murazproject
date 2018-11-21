@@ -8,6 +8,6 @@ class Type_prelevement extends Model
 {
     //
     protected $table = 'type_prelevements';
-    protected $fillable ['nom_prelevement'] ;
+    protected $fillable =['nom_prelevement'] ;
     protected $guarded =['id_type_prelevement'];
 }

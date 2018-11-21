@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Examens;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Structuration\Section;
+use App\Modeles\Examens\Materiel;
+use App\Modeles\Examens\Type_prelevement;
+use App\Modeles\Examens\Examen;
+
 
 class ExamenController extends Controller
 {
@@ -15,6 +20,9 @@ class ExamenController extends Controller
     public function index()
     {
         //
+        $examens=Examen::all();
+
+        return view('Examens.index',compact('examens'));
     }
 
     /**
@@ -25,6 +33,13 @@ class ExamenController extends Controller
     public function create()
     {
         //
+        $sections=Section::all();
+        $materiels=Materiel::all();
+        $typePrelevements=Type_prelevement::all();
+        return view('Examens.create')->with(['sections' =>$sections,
+                                              'materiels' =>$materiels,
+                                              'typePrelevements' =>$typePrelevements  ]);
+      //  return view('Examens.create')
     }
 
     /**
@@ -35,7 +50,15 @@ class ExamenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //nom_examen','montant_examen','abreviation
+        $examens = new Examen;
+        $examens->nom_examen=$request->nom_examen;
+        $examens->montant_examen=$request->montant_examen;
+        $examens->abreviation=$request->abreviation;
+        $examens->sections_id=$request->sections_id;
+
+        $examens->save();
+        echo 'L\' examen  '.$examens->nom_examen. ' a ete ajoute avec succes';
     }
 
     /**

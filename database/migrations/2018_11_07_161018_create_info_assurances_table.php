@@ -14,13 +14,13 @@ class CreateInfoAssurancesTable extends Migration
     public function up()
     {
         Schema::create('info_assurances', function (Blueprint $table) {
-            $table->unsignedInteger('id_patient');
-            $table->unsignedInteger('id_assurance');
+            $table->unsignedInteger('patients_id');
+            $table->unsignedInteger('assurances_id');
             $table->string('type_assurance');
             $table->float('pourcentage');
             $table->longText('detail');
             $table->DateTime('date_validite');
-            $table->primary('id_assurance','id_patient');
+            $table->primary('assurances_id','patients_id');
             $table->timestamps();
         });
     }

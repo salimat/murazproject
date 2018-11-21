@@ -16,12 +16,12 @@ class AddModifyToInfoChefLabosTable extends Migration
         Schema::table('info_chef_labos', function (Blueprint $table) {
              //$table->unsignedInteger('matricule_emp');
 
-           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
+           $table->foreign('employes_id')->references('id')->on('employes');
 
 
            // $table->unsignedInteger('id_labo');
 
-           $table->foreign('id_labo')->references('id_labo')->on('laboratoires');
+           $table->foreign('laboratoires_id')->references('id')->on('laboratoires');
         });
     }
 
@@ -33,8 +33,8 @@ class AddModifyToInfoChefLabosTable extends Migration
     public function down()
     {
         Schema::table('info_chef_labos', function (Blueprint $table) {
-             $table->dropForeign(['matricule_emp']);
-            $table->dropForeign(['id_labo']);
+             $table->dropForeign(['employes_id']);
+            $table->dropForeign(['laboratoires_id']);
         });
     }
 }

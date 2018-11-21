@@ -16,12 +16,12 @@ class AddModifyToInfoExamensReactifsTable extends Migration
         Schema::table('info_examens_reactifs', function (Blueprint $table) {
             //$table->unsignedInteger('id_composant');
 
-           $table->foreign('id_composant')->references('id_composant')->on('composant_examens');
+           $table->foreign('composant_examens_id')->references('id')->on('composant_examens');
 
 
             //$table->unsignedInteger('id_reactif');
 
-           $table->foreign('id_reactif')->references('id_reactif')->on('reactifs');
+           $table->foreign('reactifs_id')->references('id')->on('reactifs');
         });
     }
 
@@ -33,8 +33,8 @@ class AddModifyToInfoExamensReactifsTable extends Migration
     public function down()
     {
         Schema::table('info_examens_reactifs', function (Blueprint $table) {
-            $table->dropForeign('id_composant');
-            $table->dropForeign('id_reactif');
+            $table->dropForeign('composant_examens_id');
+            $table->dropForeign('reactifs_id');
         });
     }
 }

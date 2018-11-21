@@ -16,12 +16,12 @@ class AddModifyToInfoStatutEmpsTable extends Migration
         Schema::table('info_statut_emps', function (Blueprint $table) {
            // $table->unsignedInteger('matricule_emp');
 
-           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
+           $table->foreign('employes_id')->references('id')->on('employes');
 
 
             //$table->unsignedInteger('id_statut_emp');
 
-           $table->foreign('id_statut_emp')->references('id_statut_emp')->on('statut_employes');
+           $table->foreign('statut_employes_id')->references('id')->on('statut_employes');
         });
     }
 
@@ -33,8 +33,8 @@ class AddModifyToInfoStatutEmpsTable extends Migration
     public function down()
     {
         Schema::table('info_statut_emps', function (Blueprint $table) {
-            $table->dropForeign(['matricule_emp']);
-            $table->dropForeign(['id_statut_emp']);
+            $table->dropForeign(['employes.id']);
+            $table->dropForeign(['statut_employes.id']);
         });
     }
 }

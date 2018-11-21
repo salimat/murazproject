@@ -14,7 +14,7 @@ class CreateTypePrelevementsTable extends Migration
     public function up()
     {
         Schema::create('type_prelevements', function (Blueprint $table) {
-            $table->increments('id_type_prelevement');
+            $table->increments('id');
               $table->string('nom_prelevement');
             $table->timestamps();
         });

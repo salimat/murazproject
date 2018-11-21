@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Structuration;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Structuration\Laboratoire;
+use App\Modeles\Structuration\Departement;
 
 class LaboratoireController extends Controller
 {
@@ -15,6 +17,9 @@ class LaboratoireController extends Controller
     public function index()
     {
         //
+        $laboratoires=Laboratoire::all();
+
+        return view('Laboratoires/index',compact('laboratoires'));
     }
 
     /**
@@ -24,7 +29,13 @@ class LaboratoireController extends Controller
      */
     public function create()
     {
-        //
+      //je retourne la vue pour afficher le formulaire de creation de departements
+      //return view('Laboratoires/create');
+
+      $departements=Departement::all();
+      return view('Laboratoires/create')->with(['departements'=>$departements]);
+
+
     }
 
     /**
@@ -36,6 +47,18 @@ class LaboratoireController extends Controller
     public function store(Request $request)
     {
         //
+        $labo = new Laboratoire;
+        $labo->nom_labo=$request->nom_labo;
+        $labo->departements_id=$request->departements_id;
+        $labo->save();
+        return redirect()->route('laboratoires.index')->withMessage('Le Laboratoire "'.$labo->nom_labo.'" a bien été ajouté');
+
+      //  $book = $this->bookRepository->save($request->all());
+
+
+
+        //return redirect()->route('book.index')->withMessage
+      //  ('Le livre "'.$book->titre.'" a bien été ajouté');
     }
 
     /**

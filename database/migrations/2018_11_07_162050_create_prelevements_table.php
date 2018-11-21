@@ -15,15 +15,15 @@ class CreatePrelevementsTable extends Migration
     {
         Schema::create('prelevements', function (Blueprint $table) {
 
-             $table->string('id_prel');
-             $table->unsignedInteger('matricule_emp');
+             $table->string('id');
+             $table->unsignedInteger('employes_id')->nullable();
 
-             $table->unsignedInteger('id_patient');
+             $table->unsignedInteger('patients_id')->nullable();
 
              $table->date('date_prel');
              $table->time('heure_prel');
              $table->String('echantillon');
-            $table->primary(['id_prel','matricule_emp','id_patient']);
+            $table->primary(['date_prel','employes_id','patients_id']);
             $table->timestamps();
         });
     }

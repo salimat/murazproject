@@ -14,12 +14,12 @@ class CreateResultatNormesTable extends Migration
     public function up()
     {
         Schema::create('resultat_normes', function (Blueprint $table) {
-             $table->increments('id_rn');
+             $table->increments('id');
             $table->longText('detail');
-              $table->unsignedInteger('id_resultat');
+              $table->unsignedInteger('resultats_id')->nullable();
                 $table->string('valeur');
-                
-            
+
+
             $table->timestamps();
         });
     }

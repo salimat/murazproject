@@ -16,7 +16,7 @@ class AddModifyToEmployesTable extends Migration
         Schema::table('employes', function (Blueprint $table) {
             // $table->unsignedInteger('id_fonction');
 
-            $table->foreign('id_fonction')->references('id_fonction')->on('fonctions');
+            $table->foreign('fonctions_id')->references('id')->on('fonctions');
         });
     }
 
@@ -28,7 +28,7 @@ class AddModifyToEmployesTable extends Migration
     public function down()
     {
         Schema::table('employes', function (Blueprint $table) {
-             $table->dropForeign(['id_fonction']);
+             $table->dropForeign(['fonctions_id']);
         });
     }
 }

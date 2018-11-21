@@ -8,6 +8,6 @@ class Section extends Model
 {
     //
     protected $table = 'sections';
-    protected $fillable ['nom_section'] ;
-      protected $guarded =['id_section'];
+    protected $fillable =['nom_section'];
+    //  protected $guarded =['id_section'];
 }

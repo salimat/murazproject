@@ -14,15 +14,15 @@ class CreateInfoExamensTable extends Migration
     public function up()
     {
         Schema::create('info_examens', function (Blueprint $table) {
-           $table->unsignedInteger('id_patient');
-            $table->unsignedInteger('id_examen');
+           $table->unsignedInteger('patients_id');
+            $table->unsignedInteger('examens_id');
             $table->string('prescripteur');
 
-             $table->unsignedInteger('id_info_examen');
+            // $table->unsignedInteger('id_info_examen');
             $table->string('hopital');
             $table->date('date_examen');
             $table->longText('motif');
-            $table->primary(['id_info_examen','id_patient','id_examen']);
+            $table->primary(['patients_id','examens_id']);
             $table->timestamps();
         });
     }

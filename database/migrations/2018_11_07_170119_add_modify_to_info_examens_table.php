@@ -16,12 +16,12 @@ class AddModifyToInfoExamensTable extends Migration
         Schema::table('info_examens', function (Blueprint $table) {
             //$table->unsignedInteger('id_patient');
 
-           $table->foreign('id_patient')->references('id_patient')->on('patients');
+           $table->foreign('patients_id')->references('id')->on('patients');
 
 
            //$table->unsignedInteger('id_examen');
 
-           $table->foreign('id_examen')->references('id_examen')->on('examens');
+           $table->foreign('examens_id')->references('id')->on('examens');
         });
     }
 
@@ -33,8 +33,8 @@ class AddModifyToInfoExamensTable extends Migration
     public function down()
     {
         Schema::table('info_examens', function (Blueprint $table) {
-             $table->dropForeign(['id_patient']);
-            $table->dropForeign(['id_examen']);
+             $table->dropForeign(['patients.id']);
+            $table->dropForeign(['examens.id']);
         });
     }
 }

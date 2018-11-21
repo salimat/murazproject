@@ -16,12 +16,12 @@ class AddModifyToInfoChefSectionsTable extends Migration
         Schema::table('info_chef_sections', function (Blueprint $table) {
             //$table->unsignedInteger('matricule_emp');
 
-           $table->foreign('matricule_emp')->references('matricule_emp')->on('employes');
+           $table->foreign('employes_id')->references('id')->on('employes');
 
 
           // $table->unsignedInteger('id_section');
 
-           $table->foreign('id_section')->references('id_section')->on('sections');
+           $table->foreign('sections_id')->references('id')->on('sections');
         });
     }
 
@@ -33,8 +33,8 @@ class AddModifyToInfoChefSectionsTable extends Migration
     public function down()
     {
         Schema::table('info_chef_sections', function (Blueprint $table) {
-             $table->dropForeign(['matricule_emp']);
-            $table->dropForeign(['id_section']);
+             $table->dropForeign(['employes_id']);
+            $table->dropForeign(['sections_id']);
         });
     }
 }

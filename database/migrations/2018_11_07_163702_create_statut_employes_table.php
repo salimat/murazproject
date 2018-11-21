@@ -14,9 +14,9 @@ class CreateStatutEmployesTable extends Migration
     public function up()
     {
         Schema::create('statut_employes', function (Blueprint $table) {
-            $table->increments('id_statut_emp');
-             $table->string('nom_statut_emp');
-              
+            $table->increments('id');
+             $table->string('nom_statut_emp')->unique;
+
             $table->timestamps();
         });
     }

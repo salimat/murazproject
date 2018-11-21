@@ -14,13 +14,13 @@ class CreateEtatReactifsTable extends Migration
     public function up()
     {
         Schema::create('etat_reactifs', function (Blueprint $table) {
-            $table->increments('id_etat');
+            $table->increments('id');
 
-            $table->unsignedInteger('id_reactif');
+            $table->unsignedInteger('reactifs_id');
             $table->float('valeur_jour');
             $table->datetime('date_jour');
             $table->string('etat_jour');
-            
+
             $table->timestamps();
         });
     }

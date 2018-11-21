@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Employe extends Model
 {
   protected $table = 'employes';
+   //protected $primaryKey= 'matricule_emp';
+   //protected $primaryKey = 'matricule_emp';
     //
-    protected $fillable ['nom_per','prenom_per','date_naissance','sexe_per','contact_per','adresse_per','mail_per','date_emb','login_emp','mot_de_passe'] ;
-    protected $guarded =['matricule_emp'];
+    protected $fillable =['name','prenom_per','date_naissance','sexe_per','contact_per',
+    'adresse_per','email','date_emb','password'] ;
+  //  protected $guarded =['matricule_emp'];
 }

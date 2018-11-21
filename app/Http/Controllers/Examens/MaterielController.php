@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Examens;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Examens\Materiel;
 
 class MaterielController extends Controller
 {
@@ -15,6 +16,9 @@ class MaterielController extends Controller
     public function index()
     {
         //
+        $materiels=Materiel::all();
+
+        return view('Materiels.index',compact('materiels'));
     }
 
     /**
@@ -25,6 +29,7 @@ class MaterielController extends Controller
     public function create()
     {
         //
+        return view('Materiels.create');
     }
 
     /**
@@ -36,6 +41,15 @@ class MaterielController extends Controller
     public function store(Request $request)
     {
         //
+
+        $materiels = new Materiel;
+        $materiels->nom_mat=$request->nom_mat;
+        $materiels->type_mat=$request->type_mat;
+        $materiels->couleur_bouchon=$request->couleur_bouchon;
+
+
+        $materiels->save();
+        echo 'Le materiel  '.$materiels->nom_mat. ' a ete ajoute avec succes';
     }
 
     /**

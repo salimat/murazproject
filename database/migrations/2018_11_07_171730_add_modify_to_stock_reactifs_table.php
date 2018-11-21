@@ -16,7 +16,7 @@ class AddModifyToStockReactifsTable extends Migration
         Schema::table('stock_reactifs', function (Blueprint $table) {
             //$table->unsignedInteger('id_reactif');
 
-           $table->foreign('id_reactif')->references('id_reactif')->on('reactifs');
+           $table->foreign('reactifs_id')->references('id')->on('reactifs');
         });
     }
 
@@ -28,7 +28,7 @@ class AddModifyToStockReactifsTable extends Migration
     public function down()
     {
         Schema::table('stock_reactifs', function (Blueprint $table) {
-            $table->dropForeign('id_reactif');
+            $table->dropForeign('reactifs_id');
         });
     }
 }

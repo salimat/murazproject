@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Employe;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Employes\Fonction;
+use App\Modeles\Employes\Employe;
 
 class EmployeController extends Controller
 {
@@ -15,6 +17,10 @@ class EmployeController extends Controller
     public function index()
     {
         //
+
+        $employes=Employe::all();
+
+        return view('Employes/index',compact('employes'));
     }
 
     /**

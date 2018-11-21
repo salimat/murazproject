@@ -14,11 +14,11 @@ class CreateMaterielsTable extends Migration
     public function up()
     {
         Schema::create('materiels', function (Blueprint $table) {
-            $table->increments('id_mat');
+            $table->increments('id');
             $table->string('type_mat');
             $table->string('nom_mat');
-            $table->string('couleur_bouchon');
-            
+            $table->string('couleur_bouchon')->nullable;
+
             $table->timestamps();
         });
     }

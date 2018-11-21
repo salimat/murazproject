@@ -14,10 +14,10 @@ class CreateUniteMesuresTable extends Migration
     public function up()
     {
         Schema::create('unite_mesures', function (Blueprint $table) {
-             $table->increments('id_unite');
+             $table->increments('id');
              $table->string('unite');
               $table->string('abreviation');
-             
+
             $table->timestamps();
         });
     }

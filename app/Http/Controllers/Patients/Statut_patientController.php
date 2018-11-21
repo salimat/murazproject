@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Patients;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Patients\Statut_patient;
 
 class Statut_patientController extends Controller
 {
@@ -15,6 +16,9 @@ class Statut_patientController extends Controller
     public function index()
     {
         //
+        $statuts=Statut_patient::all();
+
+        return view('Statut_patients/index',compact('statuts'));
     }
 
     /**
@@ -25,6 +29,7 @@ class Statut_patientController extends Controller
     public function create()
     {
         //
+        return view('Statut_patients.create');
     }
 
     /**
@@ -36,6 +41,11 @@ class Statut_patientController extends Controller
     public function store(Request $request)
     {
         //
+        $statuts = new Statut_patient;
+        $statuts->nom_statut_patient=$request->nom_statut_patient;
+        $statuts->save();
+        echo 'Le statut '.$statuts->nom_statut_patient. ' a ete ajoute avec succes';
+
     }
 
     /**

@@ -14,15 +14,15 @@ class CreateNormesTable extends Migration
     public function up()
     {
         Schema::create('normes', function (Blueprint $table) {
-            $table->increments('id_norme');
-            $table->unsignedInteger('id_unite');
-              $table->unsignedInteger('id_composant');
+            $table->increments('id');
+            $table->unsignedInteger('unite_mesures_id')->nullable();
+              $table->unsignedInteger('composant_examens_id')->nullable();
             $table->float('valeur_max');
             $table->float('valeur_min');
             $table->string('valeur_normal');
             $table->string('sexe');
             $table->string('tranche_age');
-            
+
             $table->timestamps();
         });
     }
