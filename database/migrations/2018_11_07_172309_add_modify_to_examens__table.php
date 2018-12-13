@@ -27,7 +27,7 @@ class AddModifyToExamensTable extends Migration
 
                //$table->unsignedInteger('id_type_prelevement');
 
-               $table->foreign('type_prelevements_id')->references('id')->on('type_prelevements');
+               $table->foreign('echantillons_id')->references('id')->on('echantillons');
         });
     }
 
@@ -44,7 +44,7 @@ class AddModifyToExamensTable extends Migration
             $table->dropForeign(['materiels_id']);
 
 
-            $table->dropForeign(['type_prelevements_id']);
+            $table->dropForeign(['echantillons_id']);
         });
     }
 }

@@ -16,7 +16,6 @@ class AddModifyToPatientsTable extends Migration
         Schema::table('patients', function (Blueprint $table) {
            // $table->unsignedInteger('id_statut_patient');
 
-           $table->foreign('statut_patients_id')->references('id')->on('statut_patients');
 
            // $table->unsignedInteger('matricule_emp');
 

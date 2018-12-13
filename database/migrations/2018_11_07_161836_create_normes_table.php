@@ -17,11 +17,11 @@ class CreateNormesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('unite_mesures_id')->nullable();
               $table->unsignedInteger('composant_examens_id')->nullable();
-            $table->float('valeur_max');
-            $table->float('valeur_min');
-            $table->string('valeur_normal');
-            $table->string('sexe');
-            $table->string('tranche_age');
+            $table->float('valeur_max')->nullable();
+            $table->float('valeur_min')->nullable();
+            $table->string('valeur_normal')->nullable();
+            $table->string('sexe')->nullable();
+            $table->string('tranche_age')->nullable();
 
             $table->timestamps();
         });

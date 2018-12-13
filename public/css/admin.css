@@ -1,0 +1,12 @@
+body{
+  padding:20px;
+  min-height: 380px;
+background-image: url('image1/tbm6.jpg');
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}

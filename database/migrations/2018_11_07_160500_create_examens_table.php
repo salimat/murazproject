@@ -18,7 +18,7 @@ class CreateExamensTable extends Migration
 
             $table->unsignedInteger('sections_id')->nullable();
             $table->unsignedInteger('materiels_id')->nullable();
-            $table->unsignedInteger('type_prelevements_id')->nullable();
+            $table->unsignedInteger('echantillons_id')->nullable();
 
 
 

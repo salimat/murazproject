@@ -15,8 +15,8 @@ class CreateInfoChefSectionsTable extends Migration
     {
         Schema::create('info_chef_sections', function (Blueprint $table) {
 
-            $table->unsignedInteger('employes_id');
-            $table->unsignedInteger('sections_id');
+            $table->unsignedInteger('employes_id')->nullable();
+            $table->unsignedInteger('sections_id')->nullable();
             $table->date('date_debut');
             $table->date('date_fin');
             $table->primary('employes_id','sections_id');

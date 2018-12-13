@@ -15,12 +15,12 @@ class CreateResultatNormeCalculesTable extends Migration
     {
         Schema::create('resultat_norme_calcules', function (Blueprint $table) {
               $table->increments('id');
-            $table->longText('detail');
+            $table->longText('detail')->nullable();
               $table->unsignedInteger('resultats_id')->nullable();
-                $table->float('valeur');
-                  $table->float('taux');
-                    $table->float('valeur_calcule');
-                      $table->float('valeur_absolu');
+                $table->float('valeur')->nullable();
+                  $table->float('taux')->nullable();
+                    $table->float('valeur_calcule')->nullable();
+                      $table->float('valeur_absolu')->nullable();
 
             $table->timestamps();
         });

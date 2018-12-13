@@ -45,9 +45,9 @@
 
 <div class="col-md-6">
   <select name="type_prelevements_id" class="custom-select custom-select-lg mb-3">
-    <option selected>Choisir le type de prelevement correspondant</option>
-    @foreach($typePrelevements as $type)
-    <option value="{{$type->type_prelevements_id}}">{{$type->nom_prelevement}}</option>
+    <option selected>Choisir le type d'echantillons correspondant</option>
+    @foreach($echantillons as $type)
+    <option value="{{$type->echantillons_id}}">{{$type->nom_echantillon}}</option>
     @endforeach
   </select>
   @if ($errors->has('type'))

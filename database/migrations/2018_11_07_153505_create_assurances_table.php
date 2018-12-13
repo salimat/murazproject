@@ -19,8 +19,8 @@ class CreateAssurancesTable extends Migration
             $table->string('adresse_assurance');
             $table->integer('tel_assurance');
             $table->string('email_assurance');
-            $table->string('code_post_assurance');
-            $table->string('abreviation');
+            $table->string('code_post_assurance')->nullable();
+            $table->string('abreviation')->nullable();
             $table->timestamps();
         });
     }

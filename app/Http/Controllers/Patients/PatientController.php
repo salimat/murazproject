@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Patients;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Modeles\Patients\Patient;
-use App\Modeles\Patients\Statut_patient;
 
 class PatientController extends Controller
 {
@@ -32,8 +31,9 @@ class PatientController extends Controller
     {
         //
         //return view('Patients.create');
-        $statuts=Statut_patient::all();
-        return view('Patients.create')->with(['statuts'=>$statuts]);
+      //  $statuts=Statut_patient::all();
+        return view('Patients.create');
+
     }
 
     /**
@@ -45,19 +45,11 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         //pour inserer dans la base de donnees
-        $patients = new Patient;
-        $patients->nom_per=$request->nom_per;
-        $patients->prenom_per=$request->prenom_per;
-        $patients->date_naissance=$request->date_naissance;
-        $patients->sexe_per=$request->sexe_per;
-        $patients->contact_per=$request->contact_per;
-        $patients->adresse_per=$request->adresse_per;
-        $patients->email_per=$request->email_per;
-        $patients->code_postal_pat=$request->code_postal_pat;
-        $patients->age_pat=$request->age_pat;
-        $patients->profession_pat=$request->profession_pat;
-        $patients->save();
-        echo 'Le patient '.$patients->nom_per. ' a ete ajoute avec succes';
+        $this->validate($request, [
+        'contact_per'=>'required|min:8']);
+
+        Patient::create ($request->all ());
+        return redirect(route('patients.index'));
 
     }
 
@@ -70,6 +62,8 @@ class PatientController extends Controller
     public function show($id)
     {
         //
+        $patients= Patient::findOrFail($id);
+        return view('Patients.show',compact('patients'));
     }
 
     /**
@@ -81,6 +75,8 @@ class PatientController extends Controller
     public function edit($id)
     {
         //
+        $patients= Patient::findOrFail($id);
+        return view('Patients.edit',compact('patients'));
     }
 
     /**
@@ -92,7 +88,12 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+        'contact_per'=>'required|min:8']);
+        $patients= Patient::findOrFail($id);
+        $patients->update($request->all ());
+      //  return redirect(route(home));
     }
 
     /**
@@ -104,5 +105,6 @@ class PatientController extends Controller
     public function destroy($id)
     {
         //
+        Patient::destroy($id);
     }
 }

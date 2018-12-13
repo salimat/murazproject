@@ -85,9 +85,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('departements.index') }}">Structuration</a>
-                    <a href="#">Gestion des employes</a>
-                    <a href="#">Gestion des patients</a>
+                    <a href="{{ route('departements.create') }}">Structuration</a>
+                    <a href="{{ route('register') }}">Gestion des employes</a>
+                    <a href="{{ route('patients.create') }}">Gestion des patients</a>
                     <a href="#">Gestion des prestation</a>
                     <a href="#">Gestion des Reactifs</a>
                   <!--  <a href="https://github.com/laravel/laravel">GitHub</a>-->

@@ -1,7 +1,5 @@
 @extends('layouts.contenu_layout')
 
- @section('contenu')
-
 {{ Form::open(['url' => route('departements.store')]) }}
 
 {!! Form::label('nom_departement', 'Entrez le  nom du departement: ') !!}

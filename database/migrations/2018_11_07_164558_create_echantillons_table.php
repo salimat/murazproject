@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatutPatientsTable extends Migration
+class CreateEchantillonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateStatutPatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('statut_patients', function (Blueprint $table) {
-             $table->increments('id');
-             $table->string('nom_statut_patient')->unique();
-
+        Schema::create('echantillons', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nom_echantillon');
+              $table->string('type_prelevement');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateStatutPatientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statut_patients');
+        Schema::dropIfExists('echantillons');
     }
 }

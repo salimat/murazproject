@@ -37,12 +37,16 @@ Route::resources([
     'resultatNormes' => 'Examens\Resultat_normeController',
     'resultatSansNormes' => 'Examens\Resultat_sans_normeController',
     'resultats' => 'Examens\ResultatController',
-    'typePrelevements' => 'Examens\Type_prelevementController',
+    'echantillons' => 'Examens\EchantillonController',
     'uniteMesures' => 'Examens\Unite_mesureController',
     'factures' => 'Facturation\FactureController',
     'etatReactifs' => 'Reactifs\Etat_reactifController',
     'reactifs' => 'Reactifs\ReactifController',
     'stockReactifs' => 'Reactifs\Stock_reactifController',
+    'acceuiltbm' => 'AcceuiltbmController',
+    'acceuilSecretariat' => 'AcceuilSecretariatController',
+    'acceuilAdmin' => 'AcceuilAdminController',
+    'acceuilBC' => 'AcceuilBCController',
 
 
 ]);

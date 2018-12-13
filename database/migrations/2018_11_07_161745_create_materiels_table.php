@@ -17,7 +17,7 @@ class CreateMaterielsTable extends Migration
             $table->increments('id');
             $table->string('type_mat');
             $table->string('nom_mat');
-            $table->string('couleur_bouchon')->nullable;
+            $table->string('couleur_bouchon')->nullable();
 
             $table->timestamps();
         });

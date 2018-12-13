@@ -21,7 +21,9 @@ class CreateInfoExamensTable extends Migration
             // $table->unsignedInteger('id_info_examen');
             $table->string('hopital');
             $table->date('date_examen');
-            $table->longText('motif');
+            $table->longText('motif')->nullable();
+            $table->string('categorie_patient')->nullable();
+            $table->string('etat_patient')->nullable();
             $table->primary(['patients_id','examens_id']);
             $table->timestamps();
         });

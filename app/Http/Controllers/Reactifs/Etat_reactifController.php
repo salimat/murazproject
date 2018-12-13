@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Reactifs;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Reactif\Etat_reactif;
 
 class Etat_reactifController extends Controller
 {
@@ -15,6 +16,9 @@ class Etat_reactifController extends Controller
     public function index()
     {
         //
+        $etatReactifs=Etat_reactif::all();
+
+        return view('etatReactifs.index',compact('etatReactifs'));
     }
 
     /**
@@ -25,6 +29,7 @@ class Etat_reactifController extends Controller
     public function create()
     {
         //
+        return view('Etat_reactifs.create');
     }
 
     /**
@@ -36,6 +41,8 @@ class Etat_reactifController extends Controller
     public function store(Request $request)
     {
         //
+        Etat_reactifReactif::create ($request->all ());
+        return redirect(route('Etat_reactifs.index'));
     }
 
     /**
@@ -47,6 +54,8 @@ class Etat_reactifController extends Controller
     public function show($id)
     {
         //
+        $etatReactifs= Etat_reactif::findOrFail($id);
+        return view('Etat_reactifs.show',compact('etatReactifs'));
     }
 
     /**
@@ -58,6 +67,8 @@ class Etat_reactifController extends Controller
     public function edit($id)
     {
         //
+        $etatReactifs= Etat_reactif::findOrFail($id);
+        return view('Etat_reactifs.edit',compact('etatReactifs'));
     }
 
     /**
@@ -70,6 +81,8 @@ class Etat_reactifController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $etatReactifs= Etat_reactif::findOrFail($id);
+        $etatReactifs->update($request->all ());
     }
 
     /**
@@ -81,5 +94,6 @@ class Etat_reactifController extends Controller
     public function destroy($id)
     {
         //
+        Etat_reactif::destroy($id);
     }
 }

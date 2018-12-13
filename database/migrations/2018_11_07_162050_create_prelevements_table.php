@@ -22,7 +22,7 @@ class CreatePrelevementsTable extends Migration
 
              $table->date('date_prel');
              $table->time('heure_prel');
-             $table->String('echantillon');
+             //$table->String('echantillon');
             $table->primary(['date_prel','employes_id','patients_id']);
             $table->timestamps();
         });

@@ -1,0 +1,30 @@
+
+/*  body
+{
+    background: url('image1/tbm6.jpg') no-repeat;
+    background-size: 100%;
+}
+
+
+.d-block w-100 {
+  max-width: 100%;
+  height: auto;
+}
+*/
+html,body
+{
+  height:100%;
+}
+
+body
+{
+  margin:0;
+  background: url('image1/tbm6.jpg') top left / 100% 100%;
+  animation:animback 10s infinite;
+}
+
+
+@keyframes animback {
+    33% {background:url('image1/tbm8.jpg') top left / 100% 100%;}
+    66% {background:url('image1/tmb9.jpg') top left / 100% 100%;}
+}

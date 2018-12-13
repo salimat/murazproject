@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypePrelevementsTable extends Migration
+class AddModifyAtToCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTypePrelevementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_prelevements', function (Blueprint $table) {
-            $table->increments('id');
-              $table->string('nom_prelevement');
-            $table->timestamps();
+        Schema::table('codes', function (Blueprint $table) {
+            //
+             $table->foreign('patients_id')->references('id')->on('patients');
         });
     }
 
@@ -27,6 +26,9 @@ class CreateTypePrelevementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_prelevements');
+        Schema::table('codes', function (Blueprint $table) {
+            //
+             $table->dropForeign(['patients_id']);
+        });
     }
 }

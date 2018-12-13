@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Modeles\Structuration\Section;
 use App\Modeles\Examens\Materiel;
-use App\Modeles\Examens\Type_prelevement;
+use App\Modeles\Examens\Echantillon;
 use App\Modeles\Examens\Examen;
 
 
@@ -35,10 +35,10 @@ class ExamenController extends Controller
         //
         $sections=Section::all();
         $materiels=Materiel::all();
-        $typePrelevements=Type_prelevement::all();
+        $echantillons=Echantillon::all();
         return view('Examens.create')->with(['sections' =>$sections,
                                               'materiels' =>$materiels,
-                                              'typePrelevements' =>$typePrelevements  ]);
+                                              'echantillons' =>$echantillons  ]);
       //  return view('Examens.create')
     }
 

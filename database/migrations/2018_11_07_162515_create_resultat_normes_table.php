@@ -15,9 +15,9 @@ class CreateResultatNormesTable extends Migration
     {
         Schema::create('resultat_normes', function (Blueprint $table) {
              $table->increments('id');
-            $table->longText('detail');
+            $table->longText('detail')->nullable();
               $table->unsignedInteger('resultats_id')->nullable();
-                $table->string('valeur');
+                $table->string('valeur')->nullable();
 
 
             $table->timestamps();

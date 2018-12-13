@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Reactifs;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Reactif\Reactif;
 
 class ReactifController extends Controller
 {
@@ -15,6 +16,9 @@ class ReactifController extends Controller
     public function index()
     {
         //
+        $reactifs=Reactif::all();
+
+        return view('Reactifs.index',compact('reactifs'));
     }
 
     /**
@@ -25,6 +29,7 @@ class ReactifController extends Controller
     public function create()
     {
         //
+        return view('Reactifs.create');
     }
 
     /**
@@ -36,6 +41,9 @@ class ReactifController extends Controller
     public function store(Request $request)
     {
         //
+        Reactif::create ($request->all ());
+        return redirect(route('reactifs.index'));
+
     }
 
     /**
@@ -47,6 +55,8 @@ class ReactifController extends Controller
     public function show($id)
     {
         //
+        $reactifs= Reactif::findOrFail($id);
+        return view('Reactifs.show',compact('reactifs'));
     }
 
     /**
@@ -58,6 +68,8 @@ class ReactifController extends Controller
     public function edit($id)
     {
         //
+        $reactifs= Reactif::findOrFail($id);
+        return view('Reactifs.edit',compact('reactifs'));
     }
 
     /**
@@ -70,6 +82,8 @@ class ReactifController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $reactifs= Reactif::findOrFail($id);
+        $reactifs->update($request->all ());
     }
 
     /**
@@ -81,5 +95,6 @@ class ReactifController extends Controller
     public function destroy($id)
     {
         //
+        Reactif::destroy($id);
     }
 }

@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Examens;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Modeles\Examens\Type_prelevement;
 
-class Type_prelevementController extends Controller
+class CodeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,6 @@ class Type_prelevementController extends Controller
     public function index()
     {
         //
-
-        $types=Type_prelevement::all();
-
-        return view('Type_prelevements.index',compact('types'));
     }
 
     /**
@@ -30,8 +25,6 @@ class Type_prelevementController extends Controller
     public function create()
     {
         //
-
-        return view('Type_prelevements/create');
     }
 
     /**
@@ -43,11 +36,6 @@ class Type_prelevementController extends Controller
     public function store(Request $request)
     {
         //
-
-        $types = new Type_prelevement;
-        $types->nom_prelevement=$request->nom_prelevement;
-        $types->save();
-        echo 'Le prelevement de type '.$types->nom_prelevement. ' a ete ajoute avec succes';
     }
 
     /**

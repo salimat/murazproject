@@ -17,11 +17,11 @@ class CreateResultatMultiColonnesTable extends Migration
            $table->increments('id');
 
                 $table->unsignedInteger('resultats_id')->nullable();
-                 $table->longText('detail');
-                 $table->string('valeur');
-                  $table->text('item1');
-                    $table->text('item2');
-                      $table->text('item3');
+                 $table->longText('detail')->nullable();
+                 $table->string('valeur')->nullable();
+                  $table->text('item1')->nullable();
+                    $table->text('item2')->nullable();
+                      $table->text('item3')->nullable();
 
             $table->timestamps();
         });
