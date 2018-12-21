@@ -29,15 +29,15 @@
 <div class="mail-box">
 	<aside class="lg-side">
 		<div class="inbox-head">
-			<h3> LES EXAMENS</h3>
-			<form method="POST" action="{{ route('examens.index') }}" class="pull-right position">
+			<h3> LES PATIENTS</h3>
+			<form method="POST" action="{{ route('prestations.index') }}" class="pull-right position">
 				<div class="input-append">
-					<input type="text" class="sr-input" placeholder="nom examen">
+					<input type="text" class="sr-input" placeholder="Nom Examen">
 					<button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 		</div>
-    <button class="btn btn-default pull-right" type="button"style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='prestations/create'" ><i class="glyphicon glyphicon-plus"></i> Ajouter Les prestations du Patient</button>
+    <button class="btn btn-default pull-right" type="button"style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='patients/create'" ><i class="glyphicon glyphicon-plus"></i> Ajouter un patient</button>
 
 
 <div class="container">
@@ -54,25 +54,19 @@
                    <thead>
 
                    <th><input type="checkbox" id="checkall" /></th>
-
-                      <th>IDENTIFIANT </th>
-                     <th>NOM </th>
-                     <th>MONTANT </th>
-                     <th>ABREVIATION</th>
-
-
-
+                   <th>IDENTIFIANT </th>
+                   <th>NOM EXAMEN</th>
+                   <th>ABBREVIATION </th>
+                 	<th>PRIX</th>
                    </thead>
     <tbody>
-@foreach ($examens as $emp)
+@foreach ($examens as $exam)
     <tr>
-    <td><input type="checkbox" class="checkthis" name=id[] value="$emp->id"/> </td>
-
-        <th> {{ $emp->id}}</th>
-        <th> {{ $emp->nom_examen }}</th>
-        <th> {{ $emp->montant_examen }}</th>
-        <th> {{ $emp->abreviation}}</th>
-
+    <td><input type="checkbox" class="checkthis" name=id[] value="$exam->id"/> </td>
+    <td> {{ $exam->id}}</td>
+    <td> {{ $exam->nom_examen }}</td>
+    <td> {{ $exam->montant_examen }}</td>
+    <td> {{ $exam->abreviation }}</td>
     </tr>
 
   @endforeach

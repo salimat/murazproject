@@ -15,32 +15,37 @@
   </div>-->
 
 
-  
-	<li class="drpdown"><a href="{{ url('/patients/') }}"><i class="icon20 login"></i><span>PRELEVEMENT</span></a>
+
+	<li class="drpdown"><a href="{{ url('/patients/') }}"><i class="fa fa-plus-square"></i><span>PRELEVEMENT</span></a>
 		<ul class="drpcontent">
 			<li><a href="{{ url('/patients/') }}">Information Du patients</a></li>
 			<li><a href="#">Valider  Prelevement</a></li>
 		</ul>
 	</li>
 
-  <li class="drpdown"><a href="#"><i class="icon20 icon-medkit"></i><span>EXAMEN</span></a>
+  <li class="drpdown"><a href="#"><i class="fa fa-medkit"></i><span>EXAMEN</span></a>
     <ul class="drpcontent">
       <li><a href="#">Info des Examens</a></li>
     </ul>
   </li>
 
-	<li class="drpdown"><a href="#"><i class="icon20 icon-medkit"></i><span>PRESTATION</span></a>
+	<li class="drpdown"><a href="#"><i class="fa fa-medkit"></i><span>PRESTATION</span></a>
 		<ul class="drpcontent" id="themeselect">
 			<li><a href="#">Liste Des Prestation Du Patient</a></li>
 		</ul>
 	</li>
-  <li class="drpdown"><a href="#"><i class="icon20 icon-money "></i><span>RESULTAT</span></a>
+  <li class="drpdown"><a href="#"><i class="fa fa-file-o "></i><span>RESULTAT</span></a>
 		<ul class="drpcontent" id="themeselect">
 			<li><a href="#" >Entrez Resultat du Patient</a>  </li>
 			<li><a href="#" >Consulter Resultat du Patient</a></li>
-			<li><a href="#" >Imprimer Les Resultats</a></li>
+
 		</ul>
 	</li>
+  <li class="drpdown"><a href="#"><i class="fa fa-print"></i><span>IMPRESSION</span></a>
+    <ul class="drpcontent">
+      <li><a href="#">Imprimer</a></li>
+    </ul>
+  </li>
 
 </ul>
 @endsection

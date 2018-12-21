@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Structuration;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Modeles\Structuration\Laboratoire;
-use App\Modeles\Structuration\Departement;
+
 
 class LaboratoireController extends Controller
 {
@@ -32,8 +32,8 @@ class LaboratoireController extends Controller
       //je retourne la vue pour afficher le formulaire de creation de departements
       //return view('Laboratoires/create');
 
-      $departements=Departement::all();
-      return view('Laboratoires/create')->with(['departements'=>$departements]);
+
+      return view('Laboratoires/create');
 
 
     }
@@ -49,7 +49,6 @@ class LaboratoireController extends Controller
         //
         $labo = new Laboratoire;
         $labo->nom_labo=$request->nom_labo;
-        $labo->departements_id=$request->departements_id;
         $labo->save();
         return redirect()->route('laboratoires.index')->withMessage('Le Laboratoire "'.$labo->nom_labo.'" a bien été ajouté');
 

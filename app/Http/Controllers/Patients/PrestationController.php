@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Patients;
+//namespace App\Http\Controllers\Examens;
 use App\Modeles\Structuration\Section;
 use App\Modeles\Examens\Examen;
 
@@ -30,8 +31,11 @@ class PrestationController extends Controller
         //
         $sections=Section::all();
         $examens=Examen::all();
-        return view('PrestationFaite.create')->with(['sections'=>$sections,
+        return view('PrestationFaite.create');/*->with(['sections'=>$sections,
                                                       'examens'=>$examens]);
+          /*return view('Examens.create')->with(['sections' =>$sections,
+          'materiels' =>$materiels,
+          'echantillons' =>$echantillons  ]);*/
     }
 
     /**

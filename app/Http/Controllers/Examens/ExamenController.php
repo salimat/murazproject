@@ -20,7 +20,7 @@ class ExamenController extends Controller
     public function index()
     {
         //
-        $patients=Examen::paginate(5);
+        $examens=Examen::paginate(5);
 
 
 
@@ -53,14 +53,16 @@ class ExamenController extends Controller
     public function store(Request $request)
     {
         //nom_examen','montant_examen','abreviation
-        $examens = new Examen;
+        /*$examens = new Examen;
         $examens->nom_examen=$request->nom_examen;
         $examens->montant_examen=$request->montant_examen;
         $examens->abreviation=$request->abreviation;
         $examens->sections_id=$request->sections_id;
 
         $examens->save();
-        echo 'L\' examen  '.$examens->nom_examen. ' a ete ajoute avec succes';
+        echo 'L\' examen  '.$examens->nom_examen. ' a ete ajoute avec succes';*/
+        Examen::create ($request->all ());
+        return redirect(route('examens.index'));
     }
 
     /**

@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Examens;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Examens\Echantillon;
+
+
+
+
+
 
 class EchantillonController extends Controller
 {
@@ -15,6 +21,9 @@ class EchantillonController extends Controller
     public function index()
     {
         //
+        $echantillons=Echantillon::all();
+
+        return view('Echantillons/index',compact('echantillons'));
     }
 
     /**
@@ -25,6 +34,7 @@ class EchantillonController extends Controller
     public function create()
     {
         //
+        return view('Echantillons/create');
     }
 
     /**
@@ -36,6 +46,8 @@ class EchantillonController extends Controller
     public function store(Request $request)
     {
         //
+        Echantillon::create ($request->all ());
+        return redirect(route('echantillons.index'));
     }
 
     /**
