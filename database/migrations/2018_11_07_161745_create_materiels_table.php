@@ -14,7 +14,7 @@ class CreateMaterielsTable extends Migration
     public function up()
     {
         Schema::create('materiels', function (Blueprint $table) {
-            $table->increments('id');
+           $table->increments('id');
             $table->string('type_mat');
             $table->string('nom_mat');
             $table->string('couleur_bouchon')->nullable();

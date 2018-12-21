@@ -14,7 +14,7 @@ class CreateEtatReactifsTable extends Migration
     public function up()
     {
         Schema::create('etat_reactifs', function (Blueprint $table) {
-            $table->increments('id');
+              $table->increments('id');
 
             $table->unsignedInteger('reactifs_id');
             $table->float('valeur_jour');

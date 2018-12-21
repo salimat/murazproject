@@ -14,7 +14,7 @@ class CreateResultatsTable extends Migration
     public function up()
     {
         Schema::create('resultats', function (Blueprint $table) {
-            $table->increments('id');
+           $table->increments('id');
               $table->unsignedInteger('examens_id')->nullable();
 
                   $table->unsignedInteger('patients_id')->nullable();

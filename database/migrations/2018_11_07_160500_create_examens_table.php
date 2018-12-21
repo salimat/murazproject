@@ -14,10 +14,10 @@ class CreateExamensTable extends Migration
     public function up()
     {
         Schema::create('examens', function (Blueprint $table) {
-           $table->increments('id');
+             $table->increments('id');
 
             $table->unsignedInteger('sections_id')->nullable();
-            $table->unsignedInteger('materiels_id')->nullable();
+            //$table->unsignedInteger('materiels_id')->nullable();
             $table->unsignedInteger('echantillons_id')->nullable();
 
 

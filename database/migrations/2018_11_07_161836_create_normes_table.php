@@ -14,7 +14,7 @@ class CreateNormesTable extends Migration
     public function up()
     {
         Schema::create('normes', function (Blueprint $table) {
-            $table->increments('id');
+               $table->increments('id');
             $table->unsignedInteger('unite_mesures_id')->nullable();
               $table->unsignedInteger('composant_examens_id')->nullable();
             $table->float('valeur_max')->nullable();

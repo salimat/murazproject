@@ -14,7 +14,7 @@ class CreateEmployesTable extends Migration
     public function up()
     {
         Schema::create('employes', function (Blueprint $table) {
-            $table->increments('id');
+              $table->increments('id');
 
             $table->string('name');
             $table->string('prenom_per');
@@ -25,7 +25,8 @@ class CreateEmployesTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            $table->unsignedInteger('fonctions_id')->nullable();;
+            $table->unsignedInteger('fonctions_id')->nullable();
+             $table->unsignedInteger('sections_id')->nullable();
 
             $table->date('date_emb');
             $table->string('password');

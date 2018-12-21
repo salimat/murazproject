@@ -14,7 +14,7 @@ class CreateComposantExamensTable extends Migration
     public function up()
     {
         Schema::create('composant_examens', function (Blueprint $table) {
-           $table->increments('id');
+          $table->increments('id');
 
 
             $table->string('nom_composant');

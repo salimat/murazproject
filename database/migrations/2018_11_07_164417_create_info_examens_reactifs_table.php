@@ -14,7 +14,7 @@ class CreateInfoExamensReactifsTable extends Migration
     public function up()
     {
         Schema::create('info_examens_reactifs', function (Blueprint $table) {
-            $table->unsignedInteger('composant_examens_id');
+             $table->unsignedInteger('composant_examens_id');
               $table->unsignedInteger('reactifs_id');
               $table->date('date_utilisation');
                $table->primary('composant_examens_id','reactifs_id');

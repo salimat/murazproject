@@ -14,7 +14,6 @@ class CreateInfoChefSectionsTable extends Migration
     public function up()
     {
         Schema::create('info_chef_sections', function (Blueprint $table) {
-
             $table->unsignedInteger('employes_id')->nullable();
             $table->unsignedInteger('sections_id')->nullable();
             $table->date('date_debut');

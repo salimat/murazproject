@@ -21,7 +21,7 @@ class CreatePrelevementsTable extends Migration
              $table->unsignedInteger('patients_id')->nullable();
 
              $table->date('date_prel');
-             $table->time('heure_prel');
+             $table->date('date_reception');
              //$table->String('echantillon');
             $table->primary(['date_prel','employes_id','patients_id']);
             $table->timestamps();

@@ -14,8 +14,9 @@ class CreateInfoExamensTable extends Migration
     public function up()
     {
         Schema::create('info_examens', function (Blueprint $table) {
-           $table->unsignedInteger('patients_id');
-            $table->unsignedInteger('examens_id');
+            $table->increments('id');
+           //$table->unsignedInteger('patients_id');
+            //$table->unsignedInteger('examens_id');
             $table->string('prescripteur');
 
             // $table->unsignedInteger('id_info_examen');
@@ -24,7 +25,7 @@ class CreateInfoExamensTable extends Migration
             $table->longText('motif')->nullable();
             $table->string('categorie_patient')->nullable();
             $table->string('etat_patient')->nullable();
-            $table->primary(['patients_id','examens_id']);
+            //$table->primary(['patients_id','examens_id']);
             $table->timestamps();
         });
     }

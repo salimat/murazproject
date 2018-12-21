@@ -14,7 +14,7 @@ class CreateResultatSansNormesTable extends Migration
     public function up()
     {
         Schema::create('resultat_sans_normes', function (Blueprint $table) {
-            $table->increments('id');
+          $table->increments('id');
             $table->longText('detail')->nullable();
               $table->unsignedInteger('resultats_id')->nullable();
                 $table->string('valeur')->nullable();

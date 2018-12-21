@@ -21,7 +21,7 @@ class AddModifyToExamensTable extends Migration
 
               //$table->unsignedInteger('id_mat');
 
-               $table->foreign('materiels_id')->references('id')->on('materiels');
+               //$table->foreign('materiels_id')->references('id')->on('materiels');
 
 
 
@@ -41,7 +41,7 @@ class AddModifyToExamensTable extends Migration
         Schema::table('examens', function (Blueprint $table) {
              $table->dropForeign(['sections_id']);
 
-            $table->dropForeign(['materiels_id']);
+            //$table->dropForeign(['materiels_id']);
 
 
             $table->dropForeign(['echantillons_id']);

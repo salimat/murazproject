@@ -14,7 +14,7 @@ class CreateResultatMultiColonnesTable extends Migration
     public function up()
     {
         Schema::create('resultat_multi_colonnes', function (Blueprint $table) {
-           $table->increments('id');
+          $table->increments('id');
 
                 $table->unsignedInteger('resultats_id')->nullable();
                  $table->longText('detail')->nullable();
