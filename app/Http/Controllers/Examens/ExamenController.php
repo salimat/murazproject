@@ -20,7 +20,9 @@ class ExamenController extends Controller
     public function index()
     {
         //
-        $examens=Examen::all();
+        $patients=Examen::paginate(5);
+
+
 
         return view('Examens.index',compact('examens'));
     }

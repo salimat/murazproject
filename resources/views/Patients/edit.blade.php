@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.secretariatnav')
 
 @section('content')
 
 <div>
-<p><a href="{{ url('/') }}">Annuler</a></p>
+<p><a href="{{ url('/patients') }}">Annuler</a></p>
 </div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h1>Editer un   patient#{{($patients->id)}}</h1></div>
+                <div class="card-header"><h1>Modifier les Information du Patient</h1></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('patients.update',$patients) }}">

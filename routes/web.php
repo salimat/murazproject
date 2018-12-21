@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::group(['middleware' => 'auth'], function () {
 Route::resources([
     'departements' => 'Structuration\DepartementController',
     'laboratoires' => 'Structuration\LaboratoireController',
@@ -25,7 +26,7 @@ Route::resources([
     'fonctions' => 'Employe\FonctionController',
     'statutEmployes' => 'Employe\Statut_employeController',
     'employes' => 'Employe\EmployeController',
-    'statutPatients' => 'Patients\Statut_patientController',
+    'prestations' => 'Patients\PrestationController',
     'patients' => 'Patients\PatientController',
     'assurances' => 'Assurance\AssuranceController',
     'composantExamens' =>'Examens\Composant_examenController',
@@ -50,5 +51,7 @@ Route::resources([
 
 
 ]);
+
+//});
 
 Route::get('/afficher_formulaire', 'Structuration\DepartementController@afficher_formulaire');

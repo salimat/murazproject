@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,500i,700,700i');
+
+.menu
+{
+	background: #00BFFF;
+	width: 100%;
+	height: 66px;
+	line-height: 50px; /*Interligne pour placer  le menu au centre*/
+	letter-spacing: 1px; /*Les espacement entre les lettres*/
+	transition: 0.3s ease-in-out;
+
+
+}
+a
+{
+  text-decoration: none; /* Supprimer les decorations des liens dans le menu*/
+	color: aliceblue;
+	text-transform: capitalize; /* Transformer le texte en majuscule*/
+	font-weight: 900; /*Augmenter la taille des ecritures dans le menu*/
+	padding: 0; margin: 0 10px; /* Pour espacer les liens*/
+	transition: all 0.3s ease-in-out; /*Une transition de bordure des liens du menu au survole de la souris*/
+	border-bottom: 02px solid transparent; /*Definition de la marge au survole de sourir*/
+}
+
+.menu:hover
+{
+	box-shadow: 00px 06px 20px #9e9e9e;
+	background: #00BFFF;
+}
+.m-left{
+	float: left; /* Placer le logo a gauche*/
+}
+
+.logo
+{
+	margin: 0; padding: 0; /*Supprimer les marges*/
+  width:100px;
+  height:65px;
+}
+
+.m-right
+{
+	float: right; /*Placer les texte du menu a droite*/
+}
+
+.m-link
+{
+	text-decoration: none; /* Supprimer les decorations des liens dans le menu*/
+	color: aliceblue;
+	text-transform: capitalize; /* Transformer le texte en majuscule*/
+	font-weight: 900; /*Augmenter la taille des ecritures dans le menu*/
+	padding: 0; margin: 0 10px; /* Pour espacer les liens*/
+	transition: all 0.3s ease-in-out; /*Une transition de bordure des liens du menu au survole de la souris*/
+	border-bottom: 02px solid transparent; /*Definition de la marge au survole de sourir*/
+}
+
+.m-link:hover
+{
+	text-decoration: none;
+	color:aliceblue;
+	border-color: #FFFFFF;
+	padding-bottom: 03px; /*L'espacement des interlinge entre la transition et le texte*/
+}
+.m-link i
+{
+	margin-right: 3px;
+}
+
+
+
+/*css pour pied de page*/
+
+footer{
+   background-color: #424558;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    text-align: center;
+    color: #CCC;
+}
+
+footer p {
+    padding: 10.5px;
+    margin: 0px;
+    line-height: 100%;
+}

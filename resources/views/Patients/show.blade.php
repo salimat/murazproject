@@ -1,6 +1,6 @@
-@extends('layouts.contenu_layout')
- @section('contenu')
- <table  border="1" >
+@extends('layouts.secretariatnav')
+ @section('content')
+<!-- <table  border="1" >
    <tr> LES INFORMATIONS DU PATIENT SONT </tr>
    <tr> <th>IDENTIFIANT </th>
    <th>NOM </th>
@@ -19,12 +19,24 @@
     <th> {{ $patients->sexe_per }}</th>
     <th> {{ $patients->contact_per }}</th>
     <th> {{ $patients->adresse_per }}</th>
-    <th> {{ $patients->email_per }}</th>
+    <th> {{ $patients->email_per }}</th>-->
   </tr>
 
 </table>
+
+<div class="card-header"><h1>Voulez Vous Supprimer Le Patient {{ $patients->nom_per }}   {{ $patients->prenom_per }}</h1></div>
+
+<div class="card-body">
+    <form method="POST" action="{{ route('patients.destroy',$patients) }}"
+    class="inline-block" onsubmit="return confirm('Etes Vous Sur?')">
+    {{csrf_field() }}
+   {{method_field('DELETE')}}
+  <input type="submit" value="Supprimer" >
+
+ </form>
+ </div>
 <div>
-<p><a href="{{ url('/') }}">Retour a la page d'acceuil</a></p>
+<p><a href="{{ url('/patients') }}">Annuler</a></p>
 </div>
 
 

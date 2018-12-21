@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('SE CONNECTER') }}</div>
+                <div class="card-header">{{ __('SE CONNECTER') }}
+                  <span><img src="/css/image1/logo.jpg"></span>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

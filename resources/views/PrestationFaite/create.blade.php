@@ -1,3 +1,4 @@
+
 @extends('layouts.secretariatnav')
 
 @section('content')
@@ -29,9 +30,9 @@
 	<aside class="lg-side">
 		<div class="inbox-head">
 			<h3> LES PATIENTS</h3>
-			<form method="POST" action="{{ route('patients.index') }}" class="pull-right position">
+			<form method="POST" action="{{ route('prestations.index') }}" class="pull-right position">
 				<div class="input-append">
-					<input type="text" class="sr-input" placeholder="70 00 00 00">
+					<input type="text" class="sr-input" placeholder="Nom Examen">
 					<button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
@@ -54,33 +55,18 @@
 
                    <th><input type="checkbox" id="checkall" /></th>
                    <th>IDENTIFIANT </th>
-                   <th>NOM </th>
-                   <th>PRENOM </th>
-                 <th>SEXE</th>
-                   <th>CONTACT </th>
-                   <th>ADRESSE</th>
-                    <th>Edit</th>
-										<th>Delete</th>
-										<th>Ajouter Prestation</th>
+                   <th>NOM EXAMEN</th>
+                   <th>ABBREVIATION </th>
+                 	<th>PRIX</th>
                    </thead>
     <tbody>
-@foreach ($patients as $emp)
+@foreach ($examens as $exam)
     <tr>
-    <td><input type="checkbox" class="checkthis" name=id[] value="$emp->id"/> </td>
-    <td> {{ $emp->id}}</td>
-    <td> {{ $emp->nom_per }}</td>
-    <td> {{ $emp->prenom_per }}</td>
-    <td> {{ $emp->sexe_per }}</td>
-    <td> {{ $emp->contact_per }}</td>
-    <td> {{ $emp->adresse_per }}</td>
-
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="location.href='patients/{{$emp->id}}/edit'" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" onclick="location.href='patients/{{$emp->id}}'" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-		<td><p data-placement="top" data-toggle="tooltip" title="Prestation"><button class="btn btn-primary btn-xs" data-title="Ajouter Prestation" data-toggle="modal" data-target="#prestation" onclick="location.href='prestations/create'" ><span class="glyphicon glyphicon-briefcase"></span></button></p></td>
-
-
-
-
+    <td><input type="checkbox" class="checkthis" name=id[] value="$exam->id"/> </td>
+    <td> {{ $exam->id}}</td>
+    <td> {{ $exam->nom_examen }}</td>
+    <td> {{ $exam->montant_examen }}</td>
+    <td> {{ $exam->abreviation }}</td>
     </tr>
 
   @endforeach
@@ -93,7 +79,7 @@
 
 </table>
 
-{{$patients->links() }}
+{{$examens->links() }}
 
             </div>
 
