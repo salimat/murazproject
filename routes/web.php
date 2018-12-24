@@ -20,15 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::group(['middleware' => 'auth'], function () {
 Route::resources([
-    'departements' => 'Structuration\DepartementController',
+
     'laboratoires' => 'Structuration\LaboratoireController',
     'sections'  => 'Structuration\SectionController',
     'fonctions' => 'Employe\FonctionController',
     'statutEmployes' => 'Employe\Statut_employeController',
     'employes' => 'Employe\EmployeController',
-    'prestations' => 'Patients\PrestationController',
+    'prestations' => 'Patients\Prestation_faiteController',
     'patients' => 'Patients\PatientController',
-    'assurances' => 'Assurance\AssuranceController',
     'composantExamens' =>'Examens\Composant_examenController',
     'examens' => 'Examens\ExamenController',
     'materiels' => 'Examens\MaterielController',
@@ -40,7 +39,6 @@ Route::resources([
     'resultats' => 'Examens\ResultatController',
     'echantillons' => 'Examens\EchantillonController',
     'uniteMesures' => 'Examens\Unite_mesureController',
-    'factures' => 'Facturation\FactureController',
     'etatReactifs' => 'Reactifs\Etat_reactifController',
     'reactifs' => 'Reactifs\ReactifController',
     'stockReactifs' => 'Reactifs\Stock_reactifController',
@@ -53,5 +51,3 @@ Route::resources([
 ]);
 
 //});
-
-Route::get('/afficher_formulaire', 'Structuration\DepartementController@afficher_formulaire');

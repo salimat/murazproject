@@ -5,8 +5,8 @@ $(function(){
 });
 
 
-$(function(){
+/*$(function(){
     $("#add").click(function(){
         $("#table").clone().appendTo("#div1");
     });
-});
+});*/

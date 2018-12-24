@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 $("#mytable #checkall").click(function () {
         if ($("#mytable #checkall").is(':checked')) {
             $("#mytable input[type=checkbox]").each(function () {
@@ -13,4 +13,9 @@ $("#mytable #checkall").click(function () {
     });
 
     $("[data-toggle=tooltip]").tooltip();
-});
+});*/
+
+       $(document).ready(function() {
+       $('#mytable').DataTable();
+       } );
+       

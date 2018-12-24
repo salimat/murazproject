@@ -31,8 +31,7 @@ class PrestationController extends Controller
         //
         $sections=Section::all();
         $examens=Examen::all();
-        return view('PrestationFaite.create');/*->with(['sections'=>$sections,
-                                                      'examens'=>$examens]);
+        return view('PrestationFaite.create')->with(['examens'=>$examens]);
           /*return view('Examens.create')->with(['sections' =>$sections,
           'materiels' =>$materiels,
           'echantillons' =>$echantillons  ]);*/

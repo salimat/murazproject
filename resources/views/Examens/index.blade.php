@@ -3,24 +3,7 @@
 
 @section('content')
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-<script src="{{ asset('js/indexPatient.js') }}" defer></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<script src="{{ asset('js/patient1.js') }}" defer></script>
 <link href="{{ asset('css/patient1.css') }}" rel="stylesheet">
 
 <div class="container">
@@ -37,7 +20,8 @@
 				</div>
 			</form>
 		</div>
-    <button class="btn btn-default pull-right" type="button"style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='prestations/create'" ><i class="glyphicon glyphicon-plus"></i> Ajouter Les prestations du Patient</button>
+    <button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
+      <i class="glyphicon glyphicon-plus"></i> Ajouter Les prestations du Patient</button>
 
 
 <div class="container">
@@ -47,9 +31,13 @@
         <div class="col-md-12">
 
         <div class="table-responsive">
+<script type="text/javascript">
+$(document).ready(function() {
+$('#jour').DataTable();
+} );
+</script>
 
-
-              <table id="mytable" class="table table-bordred table-striped">
+              <table id="jour" class="table table-bordred table-striped">
 
                    <thead>
 
@@ -66,7 +54,7 @@
     <tbody>
 @foreach ($examens as $emp)
     <tr>
-    <td><input type="checkbox" class="checkthis" name=id[] value="$emp->id"/> </td>
+    <td><input id="identifiant" type="checkbox" class="checkthis" name="identifiant[]" value="$emp->id"/> </td>
 
         <th> {{ $emp->id}}</th>
         <th> {{ $emp->nom_examen }}</th>

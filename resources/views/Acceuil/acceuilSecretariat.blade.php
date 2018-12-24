@@ -23,16 +23,11 @@
 		</ul>
 	</li>
 
-  <li class="drpdown"><a href="#"><i class="fa fa-medkit"></i><span>EXAMEN</span></a>
-    <ul class="drpcontent">
-      <li><a href="{{ url('/examens/') }}">Liste des Examens</a></li>
-    </ul>
-  </li>
 
 	<li class="drpdown"><a href="#"><i class="fa fa-medkit"></i><span>PRESTATION</span></a>
 		<ul class="drpcontent" id="themeselect">
+			<li><a href="{{ url('/examens/') }}">Liste des Examens</a></li>
 			<li><a href="{{ url('/examens/') }}" >Ajouter Prestation</a></li>
-			<li><a href="#" >Modifier Prestation</a></li>
 			<li><a href="#">Liste Des Prestation Du Patient</a></li>
 		</ul>
 	</li>

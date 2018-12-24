@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Patients;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Modeles\Patients\Patient;
+use App\Modeles\Structuration\Section;
+use App\Modeles\Examens\Examen;
+use App\Modeles\Patients\Prestation_faite;
 
-class PatientController extends Controller
+class Prestation_faiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +17,10 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //permet d'appeller la vue lier a cet Index
-        $patients=Patient::paginate(5);
+        //
+        $prestations=Prestation_faite::all();
 
-        return view('Patients.index',compact('patients'));
-
+        return view('PrestationFaite.index',compact('prestations'));
     }
 
     /**
@@ -30,10 +31,9 @@ class PatientController extends Controller
     public function create()
     {
         //
-        //return view('Patients.create');
-      //  $statuts=Statut_patient::all();
-        return view('Patients.create');
-
+        $sections=Section::all();
+        $examens=Examen::all();
+        return view('PrestationFaite.create')->with(['examens'=>$examens]);
     }
 
     /**
@@ -44,13 +44,9 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //pour inserer dans la base de donnees
-        $this->validate($request, [
-        'contact_per'=>'required|min:8']);
-
-        Patient::create ($request->all ());
-        return redirect(route('patients.index'));
-
+        //
+        Prestation_faite::create ($request->all ());
+        return redirect(route('PrestationFaite.index'));
     }
 
     /**
@@ -62,9 +58,6 @@ class PatientController extends Controller
     public function show($id)
     {
         //
-        $patients= Patient::findOrFail($id);
-        return view('Patients.show',compact('patients'));
-
     }
 
     /**
@@ -76,9 +69,6 @@ class PatientController extends Controller
     public function edit($id)
     {
         //
-        $patients= Patient::findOrFail($id);
-        return view('Patients.edit',compact('patients'));
-        echo " Le Patient a ete modifier avec succes";
     }
 
     /**
@@ -90,12 +80,7 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $this->validate($request, [
-        'contact_per'=>'required|min:8']);
-        $patients= Patient::findOrFail($id);
-        $patients->update($request->all ());
-      //  return redirect(route(home));
+        //
     }
 
     /**
@@ -107,13 +92,5 @@ class PatientController extends Controller
     public function destroy($id)
     {
         //
-        Patient::destroy($id);
-    }
-
-    public function listePrelevement()
-    {
-      $patients=Patient::paginate(10);
-
-      return view('Patients.indexPrelevement',compact('patients'));
     }
 }

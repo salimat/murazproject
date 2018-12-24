@@ -2,25 +2,14 @@
 
 @section('content')
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-<script src="{{ asset('js/indexPatient.js') }}" defer></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<script src="{{ asset('js/patient1.js') }}" defer></script>
+
+
+
+
 <link href="{{ asset('css/patient1.css') }}" rel="stylesheet">
+<script src="{{ asset('js/indexPatient.js') }}" defer></script>
 
 <div class="container">
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
@@ -36,7 +25,7 @@
 				</div>
 			</form>
 		</div>
-    <button class="btn btn-default pull-right" type="button"style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='patients/create'" ><i class="glyphicon glyphicon-plus"></i> Ajouter un patient</button>
+  <li>  <button class="btn btn-default pull-right" type="button"style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='patients/create'" ><i class="glyphicon glyphicon-plus"></i> Ajouter un patient</button></li>
 
 
 <div class="container">
@@ -46,7 +35,6 @@
         <div class="col-md-12">
 
         <div class="table-responsive">
-
 
               <table id="mytable" class="table table-bordred table-striped">
 
@@ -76,7 +64,7 @@
 
     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="location.href='patients/{{$emp->id}}/edit'" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" onclick="location.href='patients/{{$emp->id}}'" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-		<td><p data-placement="top" data-toggle="tooltip" title="Prestation"><button class="btn btn-primary btn-xs" data-title="Ajouter Prestation" data-toggle="modal" data-target="#prestation" onclick="location.href='prestations/create'" ><span class="glyphicon glyphicon-briefcase"></span></button></p></td>
+		<td><p data-placement="top" data-toggle="tooltip" title="Prestation"><button class="btn btn-primary btn-xs" data-title="Ajouter Prestation" data-toggle="modal" data-target="#prestation" onclick="location.href='/examens/'" ><span class="glyphicon glyphicon-briefcase"></span></button></p></td>
 
 
 

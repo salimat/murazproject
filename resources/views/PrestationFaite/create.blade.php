@@ -11,22 +11,27 @@
 
 <div class="container">
 <br>
-<button id="add">Ajouter Une Prestation</button>
+<button id="add" type="button" data-toggle="modal" onclick="location.href='/examens/'"><i class="glyphicon glyphicon-plus"></i>Ajouter Une Prestation</button>
 <button id="remove">Supprimer une Prestation</button>
 <br><br>
 <div id="div1">
-<table id="table">
-	<tr>
-    	<td>Section</td>
 
-		<td><input class="form-control" type="text" id="qty" placeholder="section"></td>
-    	<td>Examen</td>
-				<td><input class="form-control" type="text" id="qty" placeholder="examen"></td>
 
-   	  <td>Prix</td><td><input class="form-control" type="text" id="qty" placeholder="quantite"></td>
-    </tr>
+		<table id="table">
+			<tr>
+		    	<td>EXAMEN</td>
 
-</table>
+				<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$examens[1]->nom_examen}}"></td>
+		    	<td>MONTANT</td>
+						<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[1]->montant_examen}}"></td>
+
+		   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[1]->abreviation}}"></td>
+		    </tr>
+
+		</table>
+
+		<button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
+      <i class="fa fa-paypal"></i> Facturer Les prestations du Patient</button>
 
 </div>
 </div>

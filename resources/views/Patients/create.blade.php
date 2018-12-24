@@ -75,7 +75,7 @@
               <div class="cols-sm-10">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                  <input type="tel" class="form-control" name="contact_per" id="contact_per"  placeholder="Entrer numero Patient" required />
+                  <input type="tel" class="form-control" name="contact_per" id="contact_per"  placeholder="Entrer numero Patient"  />
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="email" class="form-control" name="email_per" id="email_per"  placeholder="Enter  Email" required />
+									<input type="email" class="form-control" name="email_per" id="email_per"  placeholder="Enter  Email"  />
 								</div>
 							</div>
 						</div>
@@ -115,7 +115,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="code_postal_pat" id="code_postal_pat"  placeholder="Entrer code postal" required />
+									<input type="text" class="form-control" name="code_postal_pat" id="code_postal_pat"  placeholder="Entrer code postal"  />
 								</div>
 							</div>
 						</div>
