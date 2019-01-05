@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Modeles\Structuration\Section;
 use App\Modeles\Examens\Examen;
 use App\Modeles\Patients\Prestation_faite;
+use App\Modeles\Patients\Patient;
 
 class Prestation_faiteController extends Controller
 {
@@ -33,7 +34,9 @@ class Prestation_faiteController extends Controller
         //
         $sections=Section::all();
         $examens=Examen::all();
-        return view('PrestationFaite.create')->with(['examens'=>$examens]);
+        $patients=Patient::all();
+        return view('PrestationFaite.create')->with(['examens'=>$examens,
+      'patients'=>$patients]);
     }
 
     /**

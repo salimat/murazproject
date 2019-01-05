@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Patients;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modeles\Patients\Prelevement;
 use App\Modeles\Patients\Patient;
+use App\Modeles\Examens\Examen;
+use App\Modeles\Examens\Echantillon;
+use App\Modeles\Patients\Prestation_faite;
 
-class PatientController extends Controller
+class PrelevementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +19,16 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //permet d'appeller la vue lier a cet Index
+        //
         $patients=Patient::paginate(5);
+        $examens=Examen::paginate(5);
+        $echantillons=Echantillon::paginate(5);
 
-        return view('Patients.index',compact('patients'));
+
+        return view('Prelevements.index',compact(['patients',
+                                                    'examens',
+                                                  'echantillons']));
+
 
     }
 
@@ -30,10 +40,12 @@ class PatientController extends Controller
     public function create()
     {
         //
-        //return view('Patients.create');
-      //  $statuts=Statut_patient::all();
-        return view('Patients.create');
-
+        $echantillons=Echantillon::all();
+        $examens=Examen::all();
+        $patients=Patient::all();
+        return view('Prelevements.create')->with(['examens'=>$examens,
+      'patients'=>$patients,
+      'echantillons'=>$echantillons]);
     }
 
     /**
@@ -44,13 +56,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //pour inserer dans la base de donnees
-        $this->validate($request, [
-        'contact_per'=>'required|min:8']);
-
-        Patient::create ($request->all ());
-        return redirect(route('patients.index'));
-
+        //
     }
 
     /**
@@ -62,9 +68,6 @@ class PatientController extends Controller
     public function show($id)
     {
         //
-        $patients= Patient::findOrFail($id);
-        return view('Patients.show',compact('patients'));
-
     }
 
     /**
@@ -76,9 +79,6 @@ class PatientController extends Controller
     public function edit($id)
     {
         //
-        $patients= Patient::findOrFail($id);
-        return view('Patients.edit',compact('patients'));
-        echo " Le Patient a ete modifier avec succes";
     }
 
     /**
@@ -90,12 +90,7 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $this->validate($request, [
-        'contact_per'=>'required|min:8']);
-        $patients= Patient::findOrFail($id);
-        $patients->update($request->all ());
-      //  return redirect(route(home));
+        //
     }
 
     /**
@@ -107,19 +102,5 @@ class PatientController extends Controller
     public function destroy($id)
     {
         //
-        Patient::destroy($id);
-    }
-
-    public function listePrelevement()
-    {
-      $patients=Patient::paginate(10);
-
-      return view('Patients.indexPrelevement',compact('patients'));
-    }
-    public function indexRechercherPatient()
-    {
-
-      $patients=Patient::paginate(10);
-      return view('Patients.index1',compact('patients'));
     }
 }

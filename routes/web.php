@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//Route::group(['middleware' => 'auth'], function () {
+
 Route::resources([
 
     'laboratoires' => 'Structuration\LaboratoireController',
@@ -46,8 +46,7 @@ Route::resources([
     'acceuilSecretariat' => 'AcceuilSecretariatController',
     'acceuilAdmin' => 'AcceuilAdminController',
     'acceuilBC' => 'AcceuilBCController',
-
-
+    'prelevements' => 'Patients\PrelevementController',
 ]);
-
-//});
+Route::get('/patients/rechercher', 'Patients\PatientController@indexRechercherPatient()');
+Route::get('/patients/prelevement', 'Patients\PatientController@listePrelevement()');

@@ -5,6 +5,7 @@
 
 
 <link href="{{ asset('css/patient1.css') }}" rel="stylesheet">
+<script src="{{ asset('js/recherche.js') }}" defer></script>
 
 <div class="container">
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
@@ -15,8 +16,9 @@
 			<h3> LES EXAMENS</h3>
 			<form method="POST" action="{{ route('examens.index') }}" class="pull-right position">
 				<div class="input-append">
-					<input type="text" class="sr-input" placeholder="nom examen">
-					<button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
+				<!--	<input type="text" id="myInput" class="sr-input" placeholder="nom examen">-->
+					<input id="myInput" type="text" placeholder="Nom examen" class="sr-input">
+					<button  class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 		</div>
@@ -73,11 +75,12 @@ $('#jour').DataTable();
 
 </table>
 
-{{$examens->links() }}
+
 
             </div>
 
         </div>
 	</div>
 </div>
+<span>{{ $examens->links() }}</span>
     @endsection

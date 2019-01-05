@@ -34,6 +34,9 @@
   <input type="submit" value="Supprimer" >
 
  </form>
+ <td><p data-placement="top" data-toggle="tooltip" title="Annuler"><button class="btn btn-primary btn-xs" data-title="Annuler" data-toggle="modal" data-target="#edit" onclick="location.href='/patients'" >Annuler</button></p></td>
+
+
  </div>
 <div>
 <p><a href="{{ url('/patients') }}">Annuler</a></p>

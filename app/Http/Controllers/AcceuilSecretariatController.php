@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Role;
+use App\User;
 
 class AcceuilSecretariatController extends Controller
 {
@@ -10,6 +12,8 @@ class AcceuilSecretariatController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+
+
      */
     public function index()
     {
@@ -21,9 +25,9 @@ class AcceuilSecretariatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+          $request->user()->authorizeRoles(['Secretaire Medical','Caissier']);
         return view('Acceuil.acceuilSecretariat');
     }
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Role;
+use App\User;
 
 class AcceuilAdminController extends Controller
 {
@@ -21,9 +23,9 @@ class AcceuilAdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+     public function create(Request $request)
     {
-        //
+           $request->user()->authorizeRoles('Administrateur');
           return view('Acceuil.acceuilAdmin');
     }
 

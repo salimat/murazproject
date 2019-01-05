@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('SE CONNECTER') }}
-                  <span><img src="/css/image1/logo.jpg"></span>
+                  <span class="glyphicon glyphicon-lock"><img src="/css/image1/logo.jpg"></span>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

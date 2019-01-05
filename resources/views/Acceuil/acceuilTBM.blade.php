@@ -18,7 +18,7 @@
 
 	<li class="drpdown"><a href="{{ url('/patients/') }}"><i class="fa fa-plus-square"></i><span>PRELEVEMENT</span></a>
 		<ul class="drpcontent">
-			<li><a href="{{ url('/patients/') }}">Information Du patients</a></li>
+			<li><a href="{{ url('/patients/') }}">Les patients du Jour</a></li>
 			<li><a href="#">Valider  Prelevement</a></li>
 		</ul>
 	</li>

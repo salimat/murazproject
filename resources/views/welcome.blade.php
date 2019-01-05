@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('departements.create') }}">Structuration</a>
+                    <a href="{{ route('laboratoires.create') }}">Structuration</a>
                     <a href="{{ route('register') }}">Gestion des employes</a>
                     <a href="{{ route('patients.create') }}">Gestion des patients</a>
                     <a href="#">Gestion des prestation</a>

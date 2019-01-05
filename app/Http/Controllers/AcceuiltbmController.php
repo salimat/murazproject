@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Role;
+use App\User;
 
 class AcceuiltbmController extends Controller
 {
@@ -21,10 +23,10 @@ class AcceuiltbmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+     public function create(Request $request)
     {
-        //
-        return view('Acceuil.acceuilTBM');
+           $request->user()->authorizeRoles('Technicien Biomedical');
+          return view('Acceuil.acceuilTBM');
     }
 
     /**

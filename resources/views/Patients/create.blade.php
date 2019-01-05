@@ -27,9 +27,7 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				<h5>Enregistrer un nouveau patient.</h5>
-        <div>
-        <p><a href="{{ url('/acceuilSecretariat/create') }}" style="color:#E6E6FA;=">Annuler</a></p>
-        </div>
+
         <form method="POST" action="{{ route('patients.store') }}">
             @csrf
 
@@ -122,11 +120,17 @@
 
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
+									<br>
+									<br>
                     <button type="submit" class="btn btn-primary">
                         {{ __('Enregistrer') }}
                     </button>
+									<button class="btn btn-primary"><a href="{{ url('/acceuilSecretariat/create') }}" style="color:#E6E6FA;=">Annuler</a></button>
                 </div>
             </div>
+						<div>
+
+		        </div>
 
 					</form>
 				</div>

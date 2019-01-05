@@ -19,7 +19,7 @@
 		<ul class="drpcontent">
 			<li><a href="{{ url('/patients/create') }}">Ajouter Patient</a></li>
 			<li><a href="{{ url('/patients/') }}">Liste Des patients</a></li>
-			<li><a href="#">Rechercher Patient</a></li>
+			<li><a href="{{ url('patients/rechercher') }}">Rechercher Patient</a></li>
 		</ul>
 	</li>
 
