@@ -27,7 +27,7 @@ class AcceuilSecretariatController extends Controller
      */
     public function create(Request $request)
     {
-          $request->user()->authorizeRoles(['Secretaire Medical','Caissier']);
+          //$request->user()->authorizeRoles(['Secretaire Medical','Caissier']);
         return view('Acceuil.acceuilSecretariat');
     }
 

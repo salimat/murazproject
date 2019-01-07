@@ -2,12 +2,6 @@
 
 @section('content')
 
-
-
-
-
-
-
 <link href="{{ asset('css/patient1.css') }}" rel="stylesheet">
 <script src="{{ asset('js/indexPatient.js') }}" defer></script>
 
@@ -20,7 +14,7 @@
 			<h3> LES PATIENTS</h3>
 			<form method="POST" action="{{ route('patients.index') }}" class="pull-right position">
 				<div class="input-append">
-					<input type="text" class="sr-input" placeholder="70 00 00 00">
+					<input type="text" class="sr-input" placeholder="70 00 00 00" id="search_box" >
 					<button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
 				</div>
 			</form>

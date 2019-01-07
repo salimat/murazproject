@@ -41,6 +41,13 @@
                   <input type="text" class="form-control" name="prenom_per" id="prenom_per"  placeholder="Entrer Prenom Patient" required  />
 								</div>
 							</div>
+							<label for="date_naissance" class="cols-sm-2 control-label">Date de Naissance</label>
+							<div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                  <input type="date" class="form-control" name="date_naissance" id="date_naissance"  placeholder="Entrer date naissance Patient" required  />
+                </div>
+              </div>
 						</div>
 
             <div class="form-group">

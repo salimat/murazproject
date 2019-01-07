@@ -1,10 +1,8 @@
 
 @extends('layouts.secretariatnav')
-
 @section('content')
 
-
-<link href="{{ asset('css/patient1.css') }}" rel="stylesheet">
+<link href="{{ asset('css/examen.css') }}" rel="stylesheet">
 <script src="{{ asset('js/recherche.js') }}" defer></script>
 
 <div class="container">
@@ -16,9 +14,9 @@
 			<h3> LES EXAMENS</h3>
 			<form method="POST" action="{{ route('examens.index') }}" class="pull-right position">
 				<div class="input-append">
-				<!--	<input type="text" id="myInput" class="sr-input" placeholder="nom examen">-->
-					<input id="myInput" type="text" placeholder="Nom examen" class="sr-input">
-					<button  class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
+			<!--	<input type="text" id="myInput" class="sr-input" placeholder="nom examen" id="search_box">-->
+				<input type="text" class="sr-input" placeholder="nom examen" id="search" >
+				<button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
 				</div>
 			</form>
 		</div>
@@ -33,13 +31,9 @@
         <div class="col-md-12">
 
         <div class="table-responsive">
-<script type="text/javascript">
-$(document).ready(function() {
-$('#jour').DataTable();
-} );
-</script>
 
-              <table id="jour" class="table table-bordred table-striped">
+
+              <table id="myexamen" class="table table-bordred table-striped">
 
                    <thead>
 

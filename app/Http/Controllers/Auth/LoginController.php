@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,52 +26,33 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = '/acceuilSecretariat';
-    public function redirectTo(Request $request){
+    //protected $redirectTo = '/acceuilSecretariat/create';
+    protected function redirectTo()
+     {
+             // Logic that determines where to send the user
+             if(auth()->user()->hasRole('Biologiste Clinique')){
+              return redirect('/acceuilBC/create');
 
 
-        /*//  $role = Auth::user()->role->name;
-          $role = auth()->user()->role->name;
-
-          // Check user role
-          switch ($role) {
-              case 'Biologiste Clinique':
-                      return '/acceuilBC';
-                  break;
-              case 'Secretaire Medical':
-                      return '/acceuilSecretariat';
-                  break;
-              case 'Caissier':
-                          return '/acceuilSecretariat';
-                  break;
-              case 'Technicien Biomedical':
-                          return '/acceuiltbm';
-                  break;
-                case 'Administrateur':
-                              return '/acceuilAdmin';
-                      break;
-              default:
-                      return '/acceuilSecretariat';
-                  break;
-          }*/
-          if($request->user()->authorizeRoles('Biologiste Clinique'))
-          {
-            return view('Acceuil.acceuilBC');
-          }
-          elseif ($request->user()->authorizeRoles(['Secretaire Medical','Caissier'])) {
-            return view('Acceuil.acceuilSecretariat');
-          }
-          elseif ($request->user()->authorizeRoles('Technicien Biomedical'))
-          {
-            return view('Acceuil.acceuilTBM');
-          }
-          else {
-            return view('Acceuil.acceuilAdmin');
-          }
-}
+              }
+              elseif(auth()->user()->hasRole(['Secretaire Medical','Caissier'])){
+              return redirect('/acceuilSecretariat/create ');
 
 
+              }
+              elseif(auth()->user()->hasRole('Technicien Biomedical')){
+                    return redirect('/acceuiltbm/create');
 
+
+              }
+              else {
+                return redirect('/login');
+
+
+              }
+
+
+     }
     /**
      * Create a new controller instance.
      *

@@ -16,7 +16,8 @@ class PatientController extends Controller
     public function index()
     {
         //permet d'appeller la vue lier a cet Index
-        $patients=Patient::paginate(5);
+        $patients=Patient::paginate(20);
+        //$patients=Patient::all();
 
         return view('Patients.index',compact('patients'));
 
@@ -29,9 +30,8 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
-        //return view('Patients.create');
-      //  $statuts=Statut_patient::all();
+
+
         return view('Patients.create');
 
     }

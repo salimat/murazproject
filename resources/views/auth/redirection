@@ -1,0 +1,39 @@
+protected function redirectTo()
+ {
+         // Logic that determines where to send the user
+         if(auth()->user()->hasRole('Biologiste Clinique')){
+          return redirect('/acceuilBC/create');
+
+
+          }
+          elseif(auth()->user()->hasRole(['Secretaire Medical','Caissier'])){
+          return redirect('/acceuilSecretariat/create ');
+
+
+          }
+          elseif(auth()->user()->hasRole('Technicien Biomedical')){
+                return redirect('/acceuiltbm/create');
+
+
+          }
+          else {
+            return redirect('/login');
+
+
+          }
+
+
+ }
+
+ /*if($request->user()->hasRole('Biologiste Clinique')){
+  return redirect('/acceuilBC/create');
+  }
+  elseif($request->user()->hasRole(['Secretaire Medical','Caissier'])){
+  return redirect('/acceuilSecretariat/create');
+  }
+  elseif($request->user()->hasRole('Technicien Biomedical')){
+  return redirect('/acceuiltbm/create');
+  }
+  else {
+    return redirect('/acceuilAdmin/create');
+  }*/
