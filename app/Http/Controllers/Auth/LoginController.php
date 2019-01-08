@@ -31,22 +31,50 @@ class LoginController extends Controller
      {
              // Logic that determines where to send the user
              if(auth()->user()->hasRole('Biologiste Clinique')){
-              return redirect('/acceuilBC/create');
+              //return redirect('/acceuilBC/create');
+              return '/acceuilBC/create';
+
+             // return redirect()->route('/acceuilBC/create');
 
 
               }
-              elseif(auth()->user()->hasRole(['Secretaire Medical','Caissier'])){
-              return redirect('/acceuilSecretariat/create ');
+              elseif(auth()->user()->hasRole(['Secretaire Medical'])){
+              //return redirect('/acceuilSecretariat/create');
+              return '/acceuilSecretariat/create ';
+
+               //return redirect()->route('/acceuilSecretariat/create');
+
+
+              }
+               elseif(auth()->user()->hasRole(['Caissier'])){
+              //return redirect('/acceuilSecretariat/create');
+              return '/acceuilSecretariat/create ';
+
+               //return redirect()->route('/acceuilSecretariat/create');
 
 
               }
               elseif(auth()->user()->hasRole('Technicien Biomedical')){
-                    return redirect('/acceuiltbm/create');
+                   //return redirect('/acceuiltbm/create');
+               return '/acceuiltbm/create';
+
+                // return redirect()->route('/acceuiltbm/create');
+
+
+
+              }
+                elseif(auth()->user()->hasRole('Administrateur')){
+                   //return redirect('/acceuiltbm/create');
+               return '/acceuilAdmin/create';
+
+                // return redirect()->route('/acceuiltbm/create');
+
 
 
               }
               else {
-                return redirect('/login');
+                //return redirect('/login');
+                return '/login';
 
 
               }

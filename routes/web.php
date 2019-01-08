@@ -51,3 +51,9 @@ Route::resources([
 ]);
 Route::get('/patients/rechercher', 'Patients\PatientController@indexRechercherPatient()');
 Route::get('/patients/prelevement', 'Patients\PatientController@listePrelevement()');
+
+
+/*Route::get('/acceuilAdmin', 'AccueilAdminController@create');
+Route::get('/acceuilSecretariat', 'AccueilSecretariatController@create');
+Route::get('/acceuilTBM', 'AccueiltbmController@create');
+Route::get('/acceuilBC', 'AccueilBCController@create');*/
