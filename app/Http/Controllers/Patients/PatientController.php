@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Patients;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Modeles\Patients\Patient;
+use App\Modeles\Examens\Examen;
 
 class PatientController extends Controller
 {
@@ -47,9 +48,10 @@ class PatientController extends Controller
         //pour inserer dans la base de donnees
         $this->validate($request, [
         'contact_per'=>'required|min:8']);
-
+          $examens=Examen::all();
         Patient::create ($request->all ());
-        return redirect(route('patients.index'));
+        return redirect(route('examens.index'))->with(['examens'=>$examens
+      ]);
 
     }
 
@@ -63,6 +65,7 @@ class PatientController extends Controller
     {
         //
         $patients= Patient::findOrFail($id);
+return $patients->examens;
         return view('Patients.show',compact('patients'));
 
     }

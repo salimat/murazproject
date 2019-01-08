@@ -15,4 +15,13 @@ class Patient extends Model
  {
     return empty(request()->search) ? $q : $q->where('contact_per', 'like', '%'.request()->search.'%');
   }
+
+  public function examens()
+		{
+			return $this
+					->belongsToMany('App\Modeles\Examens\Examen', 'prestation_faites',
+      'patients_id', 'examens_id');
+
+		}
+
 }

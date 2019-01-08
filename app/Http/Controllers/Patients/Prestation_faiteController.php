@@ -19,6 +19,8 @@ class Prestation_faiteController extends Controller
     public function index()
     {
         //
+
+
         $prestations=Prestation_faite::all();
 
         return view('PrestationFaite.index',compact('prestations'));
@@ -26,15 +28,33 @@ class Prestation_faiteController extends Controller
 
     /**
      * Show the form for creating a new resource.
+
+
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+
+  public function create(Request $request)
     {
-        //
-        $sections=Section::all();
-        $examens=Examen::all();
-        $patients=Patient::all();
+        /*  if ($this->validate($request, [
+                 'identifiants' => 'required|array',
+               ])) {
+
+                $identifiant = $request->input('identifiant');
+                dd ($identifiant);
+                $data = array(
+             'identifiants' => $request->identifiant
+           );
+               dd ($data);*/
+
+
+
+
+
+      //  $identifiant = $request->get('identifiant');
+        $examens=Examen::find(2);
+        $patients = Patient::orderBy('id', 'desc')->first();;
         return view('PrestationFaite.create')->with(['examens'=>$examens,
       'patients'=>$patients]);
     }

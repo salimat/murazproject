@@ -8,6 +8,7 @@ use App\Modeles\Structuration\Section;
 use App\Modeles\Examens\Materiel;
 use App\Modeles\Examens\Echantillon;
 use App\Modeles\Examens\Examen;
+use App\Modeles\Patients\Patient;
 
 
 class ExamenController extends Controller
@@ -20,11 +21,10 @@ class ExamenController extends Controller
     public function index()
     {
         //
-        $examens=Examen::paginate(5);
-
-
-
-        return view('Examens.index',compact('examens'));
+        $examens=Examen::all();
+        //$patients=Patient::list('id');
+        $patients = Patient::orderBy('id', 'desc')->first();
+        return view('Examens.index',compact('examens'))->with(['patients' =>$patients ]);
     }
 
     /**

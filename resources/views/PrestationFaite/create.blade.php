@@ -21,39 +21,17 @@
 			<tr>
 		    	<td>EXAMEN</td>
 
-				<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$examens[1]->nom_examen}}"></td>
+				<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$examens->nom_examen}}"></td>
 		    	<td>MONTANT</td>
-						<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[1]->montant_examen}}"></td>
+						<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens->montant_examen}}"></td>
 
-		   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[1]->abreviation}}"></td>
+		   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens->abreviation}}"></td>
 		    </tr>
 </table>
-<table id="table">
-				<tr>
-			    	<td>EXAMEN</td>
 
-					<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$examens[3]->nom_examen}}"></td>
-			    	<td>MONTANT</td>
-							<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[3]->montant_examen}}"></td>
-
-			   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[3]->abreviation}}"></td>
-			    </tr>
-	</table>
-<table id="table">
-					<tr>
-				    	<td>EXAMEN</td>
-
-						<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$examens[6]->nom_examen}}"></td>
-				    	<td>MONTANT</td>
-								<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[6]->montant_examen}}"></td>
-
-				   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens[6]->abreviation}}"></td>
-				    </tr>
-
-		</table>
 
 		<button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
-      <i class="fa fa-paypal"></i> Facturer Les prestations de {{ $patients[2]->nom_per.' '.$patients[2]->prenom_per }}</button>
+      <i class="fa fa-paypal"></i> Facturer Les prestations de {{ $patients->nom_per. ' ' .$patients->prenom_per}}</button>
 
 </div>
 </div>

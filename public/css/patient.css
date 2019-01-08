@@ -6,12 +6,14 @@
  * General styles
  */
 #playground-container {
-    height: 500px;
+    height: 900px;
+    weight:900px;
     overflow: hidden !important;
     -webkit-overflow-scrolling: touch;
 }
 body, html{
      height: 100%;
+       weight:100%;
  	background-repeat: no-repeat;
  	background:#ffffff;
  	font-family: 'Oxygen', sans-serif;
@@ -92,7 +94,7 @@ padding: 8px 12px !important;
 .main-center{
  	margin-top: 30px;
  	margin: 0 auto;
- 	max-width: 400px;
+ 	max-width: 900px;
     padding: 10px 40px;
 	background:#009edf;
 	    color: #FFF;

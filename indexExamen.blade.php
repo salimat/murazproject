@@ -20,8 +20,12 @@
 				</div>
 			</form>
 		</div>
-    <button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
-      <i class="glyphicon glyphicon-plus"></i> Ajouter Les prestations du Patient {{$patients->nom_per. ' ' .$patients->prenom_per}}</button>
+	</div>
+<form  action="{{ route('prestations.store') }}" method="POST">
+
+
+		<button class="btn btn-default pull-right" type="button"  style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
+       <i class="glyphicon glyphicon-plus"></i>Ajouter Les prestations du Patient {{$patients->nom_per. ' ' .$patients->prenom_per}}"</button>
 
 
 <div class="container">
@@ -37,7 +41,7 @@
 
                    <thead>
 
-                   <th><input type="checkbox" id="checkall" /></th>
+                   <th><input id="identifiant" type="checkbox" class="checkthis" name="identifiant[]" value=""></th>
 
                       <th>IDENTIFIANT </th>
                      <th>NOM </th>
@@ -50,7 +54,7 @@
     <tbody>
 @foreach ($examens as $emp)
     <tr>
-    <td><input id="identifiant" type="checkbox" class="checkthis" name="identifiant[]" value="{{$emp->id}}"/></td>
+    <th><input type="checkbox" id="identifiant"  class="checkthis" name="identifiant[{{ $emp->id}}]" value="{{$emp->id}}"></th>
 
         <th> {{ $emp->id}}</th>
         <th> {{ $emp->nom_examen }}</th>
@@ -76,5 +80,8 @@
         </div>
 	</div>
 </div>
+</form>
+</div>
+
 
     @endsection

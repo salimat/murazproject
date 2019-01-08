@@ -30,7 +30,9 @@
 
         <form method="POST" action="{{ route('patients.store') }}">
             @csrf
-
+<table   cellspacing="50" cellpadding="5">
+	<tr >
+		<td>
 						<div class="form-group">
 							<label for="nom_per" class="cols-sm-2 control-label">Nom & </label>
                 <label for="prenom_per" class="cols-sm-2 control-label">Prenom</label>
@@ -41,14 +43,9 @@
                   <input type="text" class="form-control" name="prenom_per" id="prenom_per"  placeholder="Entrer Prenom Patient" required  />
 								</div>
 							</div>
-							<label for="date_naissance" class="cols-sm-2 control-label">Date de Naissance</label>
-							<div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                  <input type="date" class="form-control" name="date_naissance" id="date_naissance"  placeholder="Entrer date naissance Patient" required  />
-                </div>
-              </div>
 						</div>
+			</td>
+			<td>
 
             <div class="form-group">
               <label for="date_naissance" class="cols-sm-2 control-label">Date de Naissance</label>
@@ -59,7 +56,10 @@
                 </div>
               </div>
             </div>
-
+				</td>
+</tr>
+<tr>
+<td>
             <div class="form-group">
 
               <label for="sexe_per" class="cols-sm-2 control-label">Sexe</label>
@@ -74,6 +74,8 @@
                 </div>
               </div>
             </div>
+	</td>
+	<td>
 
             <div class="form-group">
               <label for="contact_per" class="cols-sm-2 control-label">Telephone</label>
@@ -84,6 +86,10 @@
                 </div>
               </div>
             </div>
+		</td>
+	</tr>
+	<tr>
+	<td>
 
             <div class="form-group">
               <label for="adresse_per" class="cols-sm-2 control-label">Adresse</label>
@@ -94,6 +100,8 @@
                 </div>
               </div>
             </div>
+				</td>
+				<td>
 
 						<div class="form-group">
 							<label for="email_per" class="cols-sm-2 control-label">Adresse Email</label>
@@ -104,8 +112,11 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="form-group">
+					</td>
+				</tr>
+	<tr>
+		<td>
+					<div class="form-group">
 							<label for="profession_pat" class="cols-sm-2 control-label">Profession</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -114,7 +125,8 @@
 								</div>
 							</div>
 						</div>
-
+			</td>
+			<td>
 						<div class="form-group">
 							<label for="code_postal_pat" class="cols-sm-2 control-label">code postal</label>
 							<div class="cols-sm-10">
@@ -124,6 +136,10 @@
 								</div>
 							</div>
 						</div>
+				</td>
+			</tr>
+			<tr>
+			<td>
 
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
@@ -132,12 +148,21 @@
                     <button type="submit" class="btn btn-primary">
                         {{ __('Enregistrer') }}
                     </button>
-									<button class="btn btn-primary"><a href="{{ url('/acceuilSecretariat/create') }}" style="color:#E6E6FA;=">Annuler</a></button>
                 </div>
             </div>
-						<div>
+				</td>
+			<td>
+				<div class="form-group row mb-0">
+						<div class="col-md-6 offset-md-4">
+							<br>
+							<br>
+							<button class="btn btn-primary"><a href="{{ url('/acceuilSecretariat/create') }}" style="color:#E6E6FA;=">Annuler</a></button>
+						</div>
+				</div>
+			</td>
 
-		        </div>
+				</tr>
+		</table>
 
 					</form>
 				</div>
