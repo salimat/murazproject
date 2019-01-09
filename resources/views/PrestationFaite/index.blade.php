@@ -13,25 +13,35 @@
 <br>
 <button id="add" type="button" data-toggle="modal" onclick="location.href='/examens/'"><i class="glyphicon glyphicon-plus"></i>Ajouter Une Prestation</button>
 <button id="remove">Supprimer une Prestation</button>
+<button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
+	<i class="fa fa-paypal"></i> Facture Des Prestations de {{ $patients->nom_per.' '.$patients->prenom_per }}</button>
 <br><br>
 <div id="div1">
 
+@foreach($examens as $emp)
+<table id="table">
 
-		<table id="table">
 			<tr>
 		    	<td>EXAMEN</td>
 
-				<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$examens->nom_examen}}"></td>
+				<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$emp->nom_examen}}"></td>
 		    	<td>MONTANT</td>
-						<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens->montant_examen}}"></td>
+						<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$emp->montant_examen}}"></td>
 
-		   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$examens->abreviation}}"></td>
+		   	  <td>ABREVIATION</td><td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$emp->abreviation}}"></td>
+
 		    </tr>
 </table>
+@endforeach
+<table id="table">
 
+			<tr>
+		    	<td>TOTAL</td>
 
-		<button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
-      <i class="fa fa-paypal"></i> Facturer Les prestations de {{ $patients[2]->nom_per.' '.$patients[2]->prenom_per }}</button>
+				<td><input class="form-control" type="text" id="qty"  value="{{$total}}"></td>
+
+		    </tr>
+</table>
 
 </div>
 </div>

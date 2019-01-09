@@ -1,3 +1,4 @@
+
 @extends('layouts.secretariatnav')
 @section('content')
 
@@ -19,17 +20,15 @@
 				</div>
 			</form>
 		</div>
-		<li>
-		<button class="btn btn-default pull-right" type="submit"  style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" >
-       <i class="glyphicon glyphicon-plus"></i>Ajouter Les prestations du Patient {{$patients->nom_per. ' ' .$patients->prenom_per}}"</button>
-		</li>
-
+	</div>
 <form  action="{{ route('addPrestation',$patients->id) }}" method="POST">
+    @csrf
 
-		@csrf
 
-
-		<!--	<i class="glyphicon glyphicon-plus"></i><input type="submit" name="" value="Ajouter Les prestations du Patient {{$patients->nom_per. ' ' .$patients->prenom_per}}">-->
+      <li><button class="btn btn-default pull-right" style="margin-top:20px;" >
+        <i class="glyphicon glyphicon-plus"></i>
+        <input type="submit" name="" value="Ajouter Les prestations du Patient {{$patients->nom_per. ' ' .$patients->prenom_per}}">
+      </button></li>
 
 
 <div class="container">
@@ -45,33 +44,44 @@
 
                    <thead>
 
+                   <th><input id="identifiant" type="checkbox" class="checkthis" name="identifiant[]" value=""></th>
 
-                     <th>IDENTIFIANT</th>
-                     <th>NOM</th>
-                     <th>MONTANT</th>
+                      <th>IDENTIFIANT </th>
+                     <th>NOM </th>
+                     <th>MONTANT </th>
                      <th>ABREVIATION</th>
 
 
 
                    </thead>
-    					 		 <tbody>
-										 			@foreach($examens as $emp)
-    										<tr>
-    										 <td>
-													<input type="checkbox" class="checkthis" name="identifiant{{$emp->id}}" value="{{$emp->id}}">
-												 </td>
-									        <td> {{ $emp->id}}</td>
-									        <td> {{ $emp->nom_examen }}</td>
-									        <td> {{ $emp->montant_examen }}</td>
-									        <td> {{ $emp->abreviation}}</td>
-											</tr>
-  												@endforeach
-    								</tbody>
+    <tbody>
+@foreach ($examens as $emp)
+    <tr>
+    <th><input type="checkbox" class="checkthis" name="identifiant{{$emp->id}}" value="{{$emp->id}}"></th>
 
-									</table>
+        <th> {{ $emp->id}}</th>
+        <th> {{ $emp->nom_examen }}</th>
+        <th> {{ $emp->montant_examen }}</th>
+        <th> {{ $emp->abreviation}}</th>
+
+    </tr>
+
+  @endforeach
+
+
+
+
+
+    </tbody>
+
+</table>
+
+
+
             </div>
-</div>
-</div>
+
+        </div>
+	</div>
 </div>
 </form>
 

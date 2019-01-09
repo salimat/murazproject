@@ -24,7 +24,7 @@ class ExamenController extends Controller
         $examens=Examen::all();
         //$patients=Patient::list('id');
         $patients = Patient::orderBy('id', 'desc')->first();
-        return view('Examens.index',compact('examens'))->with(['patients' =>$patients ]);
+        return view('Examens.index1',compact('examens'))->with(['patients' =>$patients ]);
     }
 
     /**

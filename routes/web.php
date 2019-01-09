@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,7 +50,8 @@ Route::resources([
 ]);
 Route::get('/patients/rechercher', 'Patients\PatientController@indexRechercherPatient()');
 Route::get('/patients/prelevement', 'Patients\PatientController@listePrelevement()');
-
+Route::post('/patient/{idPatient}/addPrestation','Patients\Prestation_faiteController@addPrestation')->name('addPrestation');
+Route::post('/patient/{idPatient}/addFacture','Patients\Prestation_faiteController@addFacture')->name('addFacture');
 
 /*Route::get('/acceuilAdmin', 'AccueilAdminController@create');
 Route::get('/acceuilSecretariat', 'AccueilSecretariatController@create');
