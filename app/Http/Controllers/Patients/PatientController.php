@@ -50,7 +50,7 @@ class PatientController extends Controller
         'contact_per'=>'required|min:8']);
           $examens=Examen::all();
         Patient::create ($request->all ());
-        return redirect(route('examens.index'))->with(['examens'=>$examens
+        return redirect(route('infoExamen.create'))->with(['examens'=>$examens
       ]);
 
     }

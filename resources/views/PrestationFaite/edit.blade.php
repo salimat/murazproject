@@ -113,7 +113,8 @@
 </head>
 
 <body>
-  <input name="b_print" type="button" onclick="printdiv('divID');" value=" Print " />
+  <input name="b_print" type="button" onclick="printdiv('divID');" value=" Imprimer " />
+  <p><a href="{{ url('/acceuilSecretariat/create ') }}">Retour</a></p>
   <div id="divID">
 
     <div class="invoice-box">

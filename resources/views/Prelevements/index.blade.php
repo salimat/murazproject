@@ -40,7 +40,7 @@
                    <thead>
 
                    <th><input type="checkbox" id="checkall" /></th>
-                   <th>IDENTIFIANT </th>
+                   <!-- <th>IDENTIFIANT </th> -->
                    <th>NOM </th>
                    <th>PRENOM </th>
                  <th>SEXE</th>
@@ -53,7 +53,7 @@
     <tr>
     <td><input type="checkbox" class="checkthis" name="identifiant{{$patients->id}}" value="{{$patients->id}}"/> </td>
 
-    <td> {{ $patients->id}}</td>
+    <!-- <td> {{ $patients->id}}</td> -->
     <td> {{ $patients->nom_per }}</td>
     <td> {{ $patients->prenom_per }}</td>
     <td> {{ $patients->sexe_per }}</td>

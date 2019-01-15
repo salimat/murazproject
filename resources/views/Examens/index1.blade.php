@@ -46,7 +46,7 @@
 
                    <th><input id="identifiant" type="checkbox" class="checkthis" name="identifiant[]" value=""></th>
 
-                      <th>IDENTIFIANT </th>
+                      <!-- <th>IDENTIFIANT </th> -->
                      <th>NOM </th>
                      <th>MONTANT </th>
                      <th>ABREVIATION</th>
@@ -59,7 +59,7 @@
     <tr>
     <th><input type="checkbox" class="checkthis" name="identifiant{{$emp->id}}" value="{{$emp->id}}"></th>
 
-        <th> {{ $emp->id}}</th>
+        <!-- <th> {{ $emp->id}}</th> -->
         <th> {{ $emp->nom_examen }}</th>
         <th> {{ $emp->montant_examen }}</th>
         <th> {{ $emp->abreviation}}</th>

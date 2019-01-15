@@ -46,7 +46,7 @@
                    <thead>
 
 
-                     <th>IDENTIFIANT</th>
+                     <!-- <th>IDENTIFIANT</th> -->
                      <th>NOM</th>
                      <th>MONTANT</th>
                      <th>ABREVIATION</th>
@@ -60,7 +60,7 @@
     										 <td>
 													<input type="checkbox" class="checkthis" name="identifiant{{$emp->id}}" value="{{$emp->id}}">
 												 </td>
-									        <td> {{ $emp->id}}</td>
+									        <!-- <td> {{ $emp->id}}</td> -->
 									        <td> {{ $emp->nom_examen }}</td>
 									        <td> {{ $emp->montant_examen }}</td>
 									        <td> {{ $emp->abreviation}}</td>
