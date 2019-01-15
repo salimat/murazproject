@@ -13,12 +13,16 @@
 <div class="mail-box">
 	<aside class="lg-side">
 		<div class="inbox-head">
-			<h3> validation du prelevement du Patient {{$patients[2]->nom_per. ' ' .$patients[2]->prenom_per}} </h3>
+			<h3> validation du prelevement du Patient {{$patients->nom_per. ' ' .$patients->prenom_per}} </h3>
 
 		</div>
 
-    <button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
+    <button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prelevements/{prelevement}/edit'" >
       <i class="glyphicon glyphicon-check"></i> Valider</button>
+
+<form class="" action="{{ route('addcodeBarre',$patients->id) }}" method="post">
+	@csrf
+	<input type="submit" name="" value="envoyer">
 
 
 <div class="container">
@@ -106,4 +110,5 @@
         </div>
 	</div>
 </div>
+</form>
 @endsection

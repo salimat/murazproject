@@ -19,6 +19,7 @@ class CreatePrestationFaitesTable extends Migration
              $table->unsignedInteger('resultats_id')->nullable();
               $table->unsignedInteger('info_examens_id')->nullable();
                $table->primary(['patients_id','examens_id']);
+               $table->date('datePrestation');
         });
     }
 

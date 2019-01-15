@@ -34,8 +34,6 @@ class LoginController extends Controller
               //return redirect('/acceuilBC/create');
               return '/acceuilBC/create';
 
-             // return redirect()->route('/acceuilBC/create');
-
 
               }
               elseif(auth()->user()->hasRole(['Secretaire Medical'])){

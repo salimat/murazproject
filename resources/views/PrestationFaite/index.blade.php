@@ -11,10 +11,22 @@
 
 <div class="container">
 <br>
+
 <button id="add" type="button" data-toggle="modal" onclick="location.href='/examens/'"><i class="glyphicon glyphicon-plus"></i>Ajouter Une Prestation</button>
 <button id="remove">Supprimer une Prestation</button>
-<button class="btn btn-default pull-right" type="button" style="margin-top:20px;" data-toggle="modal" data-target= "#item_add" onclick="location.href='/prestations/create'" >
-	<i class="fa fa-paypal"></i> Facture Des Prestations de {{ $patients->nom_per.' '.$patients->prenom_per }}</button>
+<form class="" action="{{route('addFacture',$patients->id)}}" method="post">
+@csrf
+
+
+
+
+
+<button class="btn btn-default pull-right" style="margin-top:20px;">
+	<i class="fa fa-paypal"><input type="submit" name="" value="Facturer Les Prestations de {{ $patients->nom_per.' '.$patients->prenom_per }}"></i>
+
+</button>
+
+
 <br><br>
 <div id="div1">
 
@@ -24,7 +36,7 @@
 			<tr>
 		    	<td>EXAMEN</td>
 
-				<td><input class="form-control" type="text" id="qty" placeholder="examen" value="{{$emp->nom_examen}}"></td>
+				<td><input class="form-control" type="text" name="{{$emp->id}}" placeholder="examen" value="{{$emp->nom_examen}}"></td>
 		    	<td>MONTANT</td>
 						<td><input class="form-control" type="text" id="qty" placeholder="montant" value="{{$emp->montant_examen}}"></td>
 
@@ -44,5 +56,6 @@
 </table>
 
 </div>
+</form>
 </div>
 @endsection

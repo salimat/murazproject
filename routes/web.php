@@ -47,11 +47,18 @@ Route::resources([
     'acceuilAdmin' => 'AcceuilAdminController',
     'acceuilBC' => 'AcceuilBCController',
     'prelevements' => 'Patients\PrelevementController',
+    'codes'=>'Patients\CodeController',
 ]);
-Route::get('/patients/rechercher', 'Patients\PatientController@indexRechercherPatient()');
-Route::get('/patients/prelevement', 'Patients\PatientController@listePrelevement()');
+/*Route::get('/patients/rechercher', 'Patients\PatientController@indexRechercherPatient()');
+Route::get('/patients/prelevement', 'Patients\PatientController@listePrelevement()');*/
 Route::post('/patient/{idPatient}/addPrestation','Patients\Prestation_faiteController@addPrestation')->name('addPrestation');
 Route::post('/patient/{idPatient}/addFacture','Patients\Prestation_faiteController@addFacture')->name('addFacture');
+Route::post('/patient/{idPatient}/addInfoExamen','Patients\Prestation_faiteController@addInfoExamen')->name('addInfoExamen');
+Route::get('/patient/indexPatientJour','Patients\PatientController@indexPatientJour')->name('indexPatientJour');
+Route::post('/patient/{idPatient}/addPrelevement','Patients\PrelevementController@addPrelevement')->name('addPrelevement');
+Route::post('/patient/{idPatient}/addcodeBarre','Patients\CodeController@addcodeBarre')->name('addcodeBarre');
+
+//Route::post('/patient/addcodeBarre','Patients\CodeController@addPatient')->name('addcodeBarre');
 
 /*Route::get('/acceuilAdmin', 'AccueilAdminController@create');
 Route::get('/acceuilSecretariat', 'AccueilSecretariatController@create');

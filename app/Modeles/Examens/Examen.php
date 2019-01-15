@@ -15,7 +15,8 @@ class Examen extends Model
       {
         return $this
             ->belongsToMany('App\Modeles\Patients\Patient', 'prestation_faites',
-        'patients_id', 'examens_id');
+        'patients_id', 'examens_id')
+        ->withPivot('datePrestation');
 
       }
 

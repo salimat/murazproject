@@ -19,17 +19,8 @@ class PrelevementController extends Controller
      */
     public function index()
     {
-        //
-        $patients=Patient::paginate(5);
-        $examens=Examen::paginate(5);
-        $echantillons=Echantillon::paginate(5);
 
-
-        return view('Prelevements.index',compact(['patients',
-                                                    'examens',
-                                                  'echantillons']));
-
-
+        return view('Prelevements.edit');
     }
 
     /**
@@ -43,7 +34,7 @@ class PrelevementController extends Controller
         $echantillons=Echantillon::all();
         $examens=Examen::all();
         $patients=Patient::all();
-        return view('Prelevements.create')->with(['examens'=>$examens,
+        return view('Prelevements.edit')->with(['examens'=>$examens,
       'patients'=>$patients,
       'echantillons'=>$echantillons]);
     }
@@ -79,6 +70,7 @@ class PrelevementController extends Controller
     public function edit($id)
     {
         //
+        return view('Prelevements.edit');
     }
 
     /**
@@ -102,5 +94,30 @@ class PrelevementController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addPrelevement(Request $request,$idPatient)
+    {
+
+
+        /*$list = array();
+        for($i=0; $i<=count(Patient::all()); $i++){
+        //var_dump($identifiant=$request->input('identifiant'.$i));
+        if($identifiant=$request->input('identifiant'.$i))
+        {
+            //array_push($list ,$i);
+            $patients=Patient::find([$i]);
+        }
+      }*/
+      //$patients=Patient::find($list);
+      $echantillons=Echantillon::all();
+      $examens=Examen::all();
+      $patients = Patient::orderBy('id', 'desc')->first();
+
+      return view('Prelevements.create')->with(['examens'=>$examens,
+        'patients'=>$patients,
+      'echantillons'=>$echantillons]);
+
+
     }
 }

@@ -24,7 +24,7 @@ class Resultat_sans_normeController extends Controller
      */
     public function create()
     {
-        //
+        return view('Resultat_sans_normes.create');
     }
 
     /**

@@ -18,8 +18,8 @@
 
 	<li class="drpdown"><a href="{{ url('/patients/') }}"><i class="fa fa-plus-square"></i><span>PRELEVEMENT</span></a>
 		<ul class="drpcontent">
-			<li><a href="{{ url('/patients/') }}">Les patients du Jour</a></li>
-			<li><a href="#">Valider  Prelevement</a></li>
+			<li><a href="{{ url('patient/indexPatientJour')}}">Les patients du Jour</a></li>
+			<li><a href="{{ url('patient/indexPatientJour')}}">Valider  Prelevement</a></li>
 		</ul>
 	</li>
 
@@ -36,8 +36,10 @@
 	</li>
   <li class="drpdown"><a href="#"><i class="fa fa-file-o "></i><span>RESULTAT</span></a>
 		<ul class="drpcontent" id="themeselect">
-			<li><a href="#" >Entrez Resultat du Patient</a>  </li>
-			<li><a href="#" >Consulter Resultat du Patient</a></li>
+			<li><a href="{{url('resultatSansNormes/create')}}" >Resultat sans norme</a>  </li>
+			<li><a href="#" >Resultat norme simple</a></li>
+			<li><a href="#" >Resultat norme calculées </a></li>
+			<li><a href="#" >Resultat Multi-colonne</a></li>
 
 		</ul>
 	</li>

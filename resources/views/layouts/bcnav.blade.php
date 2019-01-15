@@ -57,21 +57,17 @@
 						<a href="produits.html" class="m-link" title="Prestations et Produits"><i class="fa fa-suitcase" aria-hidden="true"></i>Aide</a>
 						<a href="forum.html" class="m-link" title="Forum"><i class="fa fa-wpforms" aria-hidden="true"></i>Forum</a>
 						<a href="contacts.html" class="m-link" title=Contacts><i class="fa fa-envelope"></i>Contacts</a>
+            <a href="#"><i class="fa fa-user"></i><span>{{ Auth::user()->name }}</span></a>
+            <!-- <ul class="drpcontent" id="themeselect"> -->
+              <!-- <li> -->
+                <a id="deconnexionbtn" class="" href="{{ route('logout') }}" style="float:right"
+                 onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">{{ __('Se deconnecter') }}</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
 
-                <a id="navbarDropdown" class="fa fa-user" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Se deconnecter') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
                 </div>
 
 					</div>
